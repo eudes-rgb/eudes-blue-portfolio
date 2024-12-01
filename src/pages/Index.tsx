@@ -1,12 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Navigation } from "@/components/Navigation";
+import { Header } from "@/components/Header";
+import { Skills } from "@/components/Skills";
+import { Contact } from "@/components/Contact";
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState("accueil");
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "competences":
+        return <Skills />;
+      case "contact":
+        return <Contact />;
+      default:
+        return <Header />;
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gray-50">
+      <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
+      <main className="container mx-auto py-8 px-4">{renderContent()}</main>
     </div>
   );
 };
