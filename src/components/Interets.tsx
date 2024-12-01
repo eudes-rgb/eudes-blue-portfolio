@@ -1,10 +1,10 @@
-import { Book, Football } from "lucide-react";
+import { Book, Trophy } from "lucide-react";
 
 export const Interets = () => {
   const interets = [
     {
       categorie: "Sports",
-      icon: <Football className="w-8 h-8" />,
+      icon: <Trophy className="w-8 h-8" />,
       items: ["Football", "Basketball"],
     },
     {
