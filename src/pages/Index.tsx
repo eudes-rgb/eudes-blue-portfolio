@@ -28,9 +28,9 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#222632]">
       <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
-      <main className="container mx-auto py-8 px-4">{renderContent()}</main>
+      <main className="container mx-auto py-8 px-4 text-white">{renderContent()}</main>
     </div>
   );
 };
