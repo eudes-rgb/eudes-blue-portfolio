@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Header } from "@/components/Header";
 import { Skills } from "@/components/Skills";
+import { Formations } from "@/components/Formations";
+import { Experiences } from "@/components/Experiences";
+import { Interets } from "@/components/Interets";
 import { Contact } from "@/components/Contact";
 
 const Index = () => {
@@ -11,6 +14,12 @@ const Index = () => {
     switch (activeTab) {
       case "competences":
         return <Skills />;
+      case "formations":
+        return <Formations />;
+      case "experiences":
+        return <Experiences />;
+      case "interets":
+        return <Interets />;
       case "contact":
         return <Contact />;
       default:

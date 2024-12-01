@@ -3,19 +3,32 @@ import { cn } from "@/lib/utils";
 const skills = [
   {
     category: "Développement",
-    items: ["JavaScript", "TypeScript", "React", "Node.js", "Python"],
+    items: ["PHP", "HTML", "CSS", "Bootstrap", "Python"],
   },
   {
     category: "Système et Réseaux",
-    items: ["Linux", "Windows Server", "Cisco", "VMware", "Docker"],
+    items: [
+      "Cisco Packet Tracer",
+      "Administration Windows",
+      "Administration Linux",
+      "Shell",
+    ],
   },
   {
-    category: "Langues",
-    items: ["Français (natif)", "Anglais (professionnel)", "Espagnol (basique)"],
+    category: "Data",
+    items: ["XML", "JSON", "SQL", "MySQL", "phpMyAdmin"],
   },
   {
     category: "Outils collaboratifs",
-    items: ["Git", "Jira", "Confluence", "Slack", "Microsoft Teams"],
+    items: ["Google Drive", "Google Classroom", "Microsoft Azure DevOps"],
+  },
+  {
+    category: "Langues",
+    items: ["Français (natif)", "Anglais (B1)"],
+  },
+  {
+    category: "Atouts personnels",
+    items: ["Esprit d'équipe", "Gestion du temps", "Organisation"],
   },
 ];
 
@@ -23,7 +36,7 @@ export const Skills = () => {
   return (
     <div className="animate-fade-in">
       <h2 className="text-3xl font-bold mb-8 text-center">Compétences</h2>
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skills.map((category) => (
           <div
             key={category.category}
