@@ -54,21 +54,22 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
                 <span>{tab.label}</span>
               </button>
             </li>
-          ))}
-        </ul>
-        
-        <div className="absolute bottom-8 left-0 w-full px-6">
-          <div className="text-gray-400 text-sm space-y-2">
-            <p className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              ekouandja-eh@saint-louis29.net
-            </p>
-            <p className="flex items-center gap-2">
-              <Terminal className="w-4 h-4" />
-              06 41 03 98 00
-            </p>
-          </div>
+          );
+        })}
+      </ul>
+      
+      <div className="absolute bottom-8 left-0 w-full px-6">
+        <div className="text-gray-400 text-sm space-y-2">
+          <p className="flex items-center gap-2">
+            <Mail className="w-4 h-4" />
+            ekouandja-eh@saint-louis29.net
+          </p>
+          <p className="flex items-center gap-2">
+            <Terminal className="w-4 h-4" />
+            06 41 03 98 00
+          </p>
         </div>
+      </div>
     </nav>
   );
 };
