@@ -26,7 +26,6 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Close menu when switching from mobile to desktop
   useEffect(() => {
     if (!isMobile) {
       setIsMenuOpen(false);
@@ -38,7 +37,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
   };
 
   const navContent = (
-    <>
+    <div className="flex flex-col h-full">
       <div className="mb-8">
         <div className="relative w-32 h-32 mx-auto mb-4">
           <img
@@ -51,34 +50,36 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
         <p className="text-gray-400 text-center text-sm">Étudiant en BTS SIO</p>
       </div>
       
-      <ul className="space-y-4">
-        {tabs.map((tab) => {
-          const Icon = tab.icon;
-          return (
-            <li key={tab.id}>
-              <button
-                onClick={() => {
-                  onTabChange(tab.id);
-                  if (isMobile) {
-                    setIsMenuOpen(false);
-                  }
-                }}
-                className={cn(
-                  "w-full px-4 py-3 rounded-lg flex items-center gap-3 transition-all duration-300",
-                  activeTab === tab.id
-                    ? "bg-[#0EA5E9] text-white"
-                    : "text-gray-400 hover:bg-[#2A2F3C] hover:text-[#0EA5E9]"
-                )}
-              >
-                <Icon className="w-5 h-5" />
-                <span>{tab.label}</span>
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      <nav className="flex-1">
+        <ul className="space-y-2">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            return (
+              <li key={tab.id}>
+                <button
+                  onClick={() => {
+                    onTabChange(tab.id);
+                    if (isMobile) {
+                      setIsMenuOpen(false);
+                    }
+                  }}
+                  className={cn(
+                    "w-full px-4 py-3 rounded-lg flex items-center gap-3 transition-all duration-300",
+                    activeTab === tab.id
+                      ? "bg-[#0EA5E9] text-white"
+                      : "text-gray-400 hover:bg-[#2A2F3C] hover:text-[#0EA5E9]"
+                  )}
+                >
+                  <Icon className="w-5 h-5" />
+                  <span>{tab.label}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
       
-      <div className="absolute bottom-8 left-0 w-full px-6">
+      <div className="mt-auto pt-4">
         <div className="text-gray-400 text-sm space-y-2">
           <p className="flex items-center gap-2">
             <Mail className="w-4 h-4" />
@@ -90,7 +91,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 
   if (isMobile) {
@@ -103,21 +104,21 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         
-        <nav
+        <aside
           className={cn(
             "fixed left-0 top-0 h-full w-64 bg-[#1A1F2C] p-6 shadow-xl transition-transform duration-300 z-40",
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           )}
         >
           {navContent}
-        </nav>
+        </aside>
       </>
     );
   }
 
   return (
-    <nav className="fixed left-0 top-0 h-full w-64 bg-[#1A1F2C] p-6 shadow-xl">
+    <aside className="fixed left-0 top-0 h-full w-64 bg-[#1A1F2C] p-6 shadow-xl">
       {navContent}
-    </nav>
+    </aside>
   );
 };
