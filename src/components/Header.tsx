@@ -21,11 +21,11 @@ export const Header = () => {
         <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-gray-300">
           <div className="flex items-center gap-2 hover:text-[#0EA5E9] transition-colors">
             <Mail className="w-4 h-4" />
-            <span>contact@eudes-hermann.com</span>
+            <span>ekouandjaeudes241@gmail.com</span>
           </div>
           <div className="flex items-center gap-2 hover:text-[#0EA5E9] transition-colors">
             <Phone className="w-4 h-4" />
-            <span>+33 6 XX XX XX XX</span>
+            <span>06 41 03 98 00</span>
           </div>
           <div className="flex items-center gap-2 hover:text-[#0EA5E9] transition-colors">
             <MapPin className="w-4 h-4" />
@@ -33,7 +33,7 @@ export const Header = () => {
           </div>
           <div className="flex items-center gap-2 hover:text-[#0EA5E9] transition-colors">
             <Calendar className="w-4 h-4" />
-            <span>Date de naissance: XX/XX/XXXX</span>
+            <span>Date de naissance: 26/06/2000</span>
           </div>
         </div>
       </div>
