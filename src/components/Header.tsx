@@ -7,7 +7,7 @@ export const Header = () => {
       <div className="container mx-auto text-center">
         <div className="relative w-32 h-32 mx-auto mb-6">
           <img
-            src="https://via.placeholder.com/150"
+            src="/lovable-uploads/74f3b0c3-9c34-4644-809a-9ba228f2cb47.png"
             alt="Eudes-Hermann EKOUANDJA"
             className="rounded-full border-4 border-[#0EA5E9] absolute inset-0 w-full h-full object-cover"
           />

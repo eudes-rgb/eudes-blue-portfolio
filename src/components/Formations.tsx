@@ -1,3 +1,5 @@
+import { GraduationCap } from "lucide-react";
+
 export const Formations = () => {
   const formations = [
     {
@@ -21,26 +23,33 @@ export const Formations = () => {
 
   return (
     <div className="animate-fade-in">
-      <h2 className="text-3xl font-bold mb-8 text-center">Formations</h2>
-      <div className="space-y-6">
+      <h2 className="text-3xl font-bold mb-12 text-center text-[#0EA5E9]">Formations</h2>
+      <div className="grid gap-6">
         {formations.map((formation, index) => (
           <div
             key={index}
-            className="bg-secondary/5 p-6 rounded-lg hover:shadow-lg transition-shadow"
+            className="bg-[#1A1F2C] p-6 rounded-lg border border-[#0EA5E9]/20 hover:border-[#0EA5E9] transition-all duration-300 hover:bg-[#1A1F2C]/80 cursor-pointer group"
           >
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
-              <h3 className="text-xl font-semibold text-primary">
-                {formation.diplome}
-              </h3>
-              <span className="text-gray-600">{formation.periode}</span>
+            <div className="flex items-start gap-4">
+              <div className="text-[#0EA5E9] mt-1">
+                <GraduationCap className="w-8 h-8" />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-[#0EA5E9] transition-colors">
+                    {formation.diplome}
+                  </h3>
+                  <span className="text-gray-400">{formation.periode}</span>
+                </div>
+                <p className="text-gray-300">{formation.etablissement}</p>
+                {formation.lieu && (
+                  <p className="text-gray-400 text-sm mt-1">{formation.lieu}</p>
+                )}
+                {formation.details && (
+                  <p className="text-gray-400 mt-2">{formation.details}</p>
+                )}
+              </div>
             </div>
-            <p className="text-gray-700">{formation.etablissement}</p>
-            {formation.lieu && (
-              <p className="text-gray-600 text-sm">{formation.lieu}</p>
-            )}
-            {formation.details && (
-              <p className="text-gray-600 mt-2">{formation.details}</p>
-            )}
           </div>
         ))}
       </div>

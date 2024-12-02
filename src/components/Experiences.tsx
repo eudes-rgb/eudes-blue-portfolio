@@ -1,3 +1,5 @@
+import { Briefcase } from "lucide-react";
+
 export const Experiences = () => {
   const experiences = [
     {
@@ -24,29 +26,37 @@ export const Experiences = () => {
 
   return (
     <div className="animate-fade-in">
-      <h2 className="text-3xl font-bold mb-8 text-center">
+      <h2 className="text-3xl font-bold mb-12 text-center text-[#0EA5E9]">
         Expériences Professionnelles
       </h2>
       <div className="space-y-8">
         {experiences.map((experience, index) => (
           <div
             key={index}
-            className="bg-secondary/5 p-6 rounded-lg hover:shadow-lg transition-shadow"
+            className="bg-[#1A1F2C] p-6 rounded-lg border border-[#0EA5E9]/20 hover:border-[#0EA5E9] transition-all duration-300"
           >
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-              <h3 className="text-xl font-semibold text-primary">
-                {experience.poste}
-              </h3>
-              <span className="text-gray-600">{experience.periode}</span>
+            <div className="flex items-start gap-4">
+              <div className="text-[#0EA5E9]">
+                <Briefcase className="w-8 h-8" />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                  <h3 className="text-xl font-semibold text-white">
+                    {experience.poste}
+                  </h3>
+                  <span className="text-gray-400">{experience.periode}</span>
+                </div>
+                <p className="text-lg text-gray-300 mb-4">{experience.entreprise}</p>
+                <ul className="space-y-2">
+                  {experience.responsabilites.map((resp, idx) => (
+                    <li key={idx} className="text-gray-300 flex items-center gap-2">
+                      <span className="w-2 h-2 bg-[#0EA5E9] rounded-full" />
+                      {resp}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <p className="text-lg text-gray-700 mb-4">{experience.entreprise}</p>
-            <ul className="list-disc list-inside space-y-2">
-              {experience.responsabilites.map((resp, idx) => (
-                <li key={idx} className="text-gray-700">
-                  {resp}
-                </li>
-              ))}
-            </ul>
           </div>
         ))}
       </div>
