@@ -10,6 +10,7 @@ export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,44 +19,31 @@ export const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      // Replace with your email service endpoint
-      const response = await fetch('YOUR_EMAIL_SERVICE_ENDPOINT', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Message envoyé !",
-          description: "Je vous répondrai dans les plus brefs délais.",
-        });
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (error) {
+    // Simuler un délai d'envoi
+    setTimeout(() => {
       toast({
-        title: "Erreur",
-        description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.",
-        variant: "destructive",
+        title: "Message envoyé !",
+        description: "Je vous répondrai dans les plus brefs délais.",
       });
-    } finally {
+      setFormData({ name: "", email: "", subject: "", message: "" });
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   return (
-    <div className="animate-fade-in">
-      <h2 className="text-3xl font-bold mb-8 text-[#0EA5E9]">Contact</h2>
-      
+    <div className="max-w-4xl mx-auto p-6">
+      <div className="mb-8">
+        <h2 className="text-3xl font-bold text-[#0EA5E9] mb-4">Contactez-moi</h2>
+        <p className="text-gray-400">
+          N'hésitez pas à me contacter pour toute question ou proposition de collaboration.
+        </p>
+      </div>
+
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-[#1A1F2C] p-8 rounded-lg border border-[#0EA5E9]/20">
+        {/* Formulaire */}
+        <div className="bg-[#1A1F2C] p-6 rounded-lg border border-[#0EA5E9]/20">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
+            <div className="space-y-4">
               <Input
                 placeholder="Votre nom"
                 value={formData.name}
@@ -63,8 +51,6 @@ export const Contact = () => {
                 required
                 className="bg-[#222632] border-[#0EA5E9]/20 focus:border-[#0EA5E9]"
               />
-            </div>
-            <div>
               <Input
                 type="email"
                 placeholder="Votre email"
@@ -73,8 +59,13 @@ export const Contact = () => {
                 required
                 className="bg-[#222632] border-[#0EA5E9]/20 focus:border-[#0EA5E9]"
               />
-            </div>
-            <div>
+              <Input
+                placeholder="Sujet"
+                value={formData.subject}
+                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                required
+                className="bg-[#222632] border-[#0EA5E9]/20 focus:border-[#0EA5E9]"
+              />
               <Textarea
                 placeholder="Votre message"
                 value={formData.message}
@@ -94,28 +85,30 @@ export const Contact = () => {
           </form>
         </div>
 
-        <div className="bg-[#1A1F2C] p-8 rounded-lg border border-[#0EA5E9]/20 space-y-6">
-          <h3 className="text-xl font-semibold mb-6">Informations de contact</h3>
-          
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-[#0EA5E9]" />
-              <p>ekouandja-eh@saint-louis29.net</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <Phone className="w-5 h-5 text-[#0EA5E9]" />
-              <p>06 41 03 98 00</p>
+        {/* Informations de contact */}
+        <div className="bg-[#1A1F2C] p-6 rounded-lg border border-[#0EA5E9]/20 space-y-6">
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Informations de contact</h3>
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-[#0EA5E9]" />
+                <p>ekouandja-eh@saint-louis29.net</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-[#0EA5E9]" />
+                <p>06 41 03 98 00</p>
+              </div>
             </div>
           </div>
 
-          <div className="pt-6 border-t border-[#0EA5E9]/20">
+          <div className="pt-4 border-t border-[#0EA5E9]/20">
             <h4 className="text-lg font-semibold mb-4">Mes réseaux sociaux</h4>
             <div className="flex gap-4">
               <a
                 href="https://www.linkedin.com/in/votre-profil"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-[#222632] rounded-lg border border-[#0EA5E9]/20 hover:border-[#0EA5E9] transition-colors"
+                className="p-3 bg-[#222632] rounded-lg hover:bg-[#0EA5E9]/10 transition-colors"
               >
                 <Linkedin className="w-6 h-6 text-[#0EA5E9]" />
               </a>
@@ -123,15 +116,19 @@ export const Contact = () => {
                 href="https://www.instagram.com/votre-profil"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-[#222632] rounded-lg border border-[#0EA5E9]/20 hover:border-[#0EA5E9] transition-colors"
+                className="p-3 bg-[#222632] rounded-lg hover:bg-[#0EA5E9]/10 transition-colors"
               >
                 <Instagram className="w-6 h-6 text-[#0EA5E9]" />
               </a>
             </div>
           </div>
 
-          <div className="pt-6 border-t border-[#0EA5E9]/20">
-            <Button variant="outline" className="w-full border-[#0EA5E9]/20 hover:bg-[#0EA5E9]/10">
+          <div className="pt-4 border-t border-[#0EA5E9]/20">
+            <Button 
+              variant="outline" 
+              className="w-full border-[#0EA5E9]/20 hover:bg-[#0EA5E9]/10"
+              onClick={() => window.open('/path-to-your-cv.pdf', '_blank')}
+            >
               Télécharger mon CV
             </Button>
           </div>
