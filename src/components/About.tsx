@@ -24,8 +24,8 @@ export const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-2">Formation</h3>
               <p className="text-gray-300">
-                Actuellement en BTS SIO (Services Informatiques aux Organisations) option SLAM, 
-                je me spécialise dans le développement d'applications et la gestion de projets informatiques.
+                Actuellement en BTS SIO (Services Informatiques aux Organisations) option SISR, 
+                je me spécialise dans l'administration des infrastructures et la sécurité des réseaux.
               </p>
             </div>
           </div>

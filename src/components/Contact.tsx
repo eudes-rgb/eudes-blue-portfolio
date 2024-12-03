@@ -12,14 +12,40 @@ export const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message envoyé !",
-      description: "Je vous répondrai dans les plus brefs délais.",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      // Replace with your email service endpoint
+      const response = await fetch('YOUR_EMAIL_SERVICE_ENDPOINT', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message envoyé !",
+          description: "Je vous répondrai dans les plus brefs délais.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -57,9 +83,13 @@ export const Contact = () => {
                 className="min-h-[150px] bg-[#222632] border-[#0EA5E9]/20 focus:border-[#0EA5E9]"
               />
             </div>
-            <Button type="submit" className="w-full bg-[#0EA5E9] hover:bg-[#0EA5E9]/80">
+            <Button 
+              type="submit" 
+              className="w-full bg-[#0EA5E9] hover:bg-[#0EA5E9]/80"
+              disabled={isSubmitting}
+            >
               <Send className="w-4 h-4 mr-2" />
-              Envoyer
+              {isSubmitting ? "Envoi en cours..." : "Envoyer"}
             </Button>
           </form>
         </div>
