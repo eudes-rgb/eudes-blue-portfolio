@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Home, User, Briefcase, Book, Mail, Terminal, Menu, X } from "lucide-react";
+import { Home, User, Book, Mail, Terminal, Menu, X, GraduationCap, Briefcase } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 type Tab = {
@@ -13,6 +13,8 @@ const tabs: Tab[] = [
   { id: "accueil", label: "Accueil", icon: Home },
   { id: "about", label: "À propos de moi", icon: User },
   { id: "competences", label: "Compétences", icon: Book },
+  { id: "formations", label: "Formations", icon: GraduationCap },
+  { id: "experiences", label: "Expériences", icon: Briefcase },
   { id: "projets", label: "Projets", icon: Terminal },
   { id: "contact", label: "Contact", icon: Mail },
 ];

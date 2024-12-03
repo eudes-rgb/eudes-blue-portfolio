@@ -5,6 +5,8 @@ import { Skills } from "@/components/Skills";
 import { Contact } from "@/components/Contact";
 import { About } from "@/components/About";
 import { Projects } from "@/components/Projects";
+import { Formations } from "@/components/Formations";
+import { Experiences } from "@/components/Experiences";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +24,10 @@ const Index = () => {
         return <Projects />;
       case "contact":
         return <Contact />;
+      case "formations":
+        return <Formations />;
+      case "experiences":
+        return <Experiences />;
       default:
         return <Header />;
     }

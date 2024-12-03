@@ -15,7 +15,7 @@ const skills = [
   {
     category: "Logiciels",
     icon: <Laptop className="w-8 h-8" />,
-    items: ["VS Code", "Packet Tracer", "Wireshark", "VirtualBox"],
+    items: ["VS Code", "Packet Tracer", "VirtualBox"],
   },
   {
     category: "Système",
@@ -30,7 +30,7 @@ const skills = [
   {
     category: "Langues",
     icon: <Languages className="w-8 h-8" />,
-    items: ["Français (natif)", "Anglais (B1)"],
+    items: ["Français", "Anglais"],
   },
 ];
 
