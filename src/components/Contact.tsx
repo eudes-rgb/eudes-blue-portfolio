@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { Mail, Phone, Send } from "lucide-react";
+import { Mail, Phone, Send, Linkedin, Instagram } from "lucide-react";
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -105,6 +105,28 @@ export const Contact = () => {
             <div className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-[#0EA5E9]" />
               <p>06 41 03 98 00</p>
+            </div>
+          </div>
+
+          <div className="pt-6 border-t border-[#0EA5E9]/20">
+            <h4 className="text-lg font-semibold mb-4">Mes réseaux sociaux</h4>
+            <div className="flex gap-4">
+              <a
+                href="https://www.linkedin.com/in/votre-profil"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-[#222632] rounded-lg border border-[#0EA5E9]/20 hover:border-[#0EA5E9] transition-colors"
+              >
+                <Linkedin className="w-6 h-6 text-[#0EA5E9]" />
+              </a>
+              <a
+                href="https://www.instagram.com/votre-profil"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-[#222632] rounded-lg border border-[#0EA5E9]/20 hover:border-[#0EA5E9] transition-colors"
+              >
+                <Instagram className="w-6 h-6 text-[#0EA5E9]" />
+              </a>
             </div>
           </div>
 
