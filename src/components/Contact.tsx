@@ -105,7 +105,7 @@ export const Contact = () => {
             <h4 className="text-lg font-semibold mb-4">Mes réseaux sociaux</h4>
             <div className="flex gap-4">
               <a
-                href="https://www.linkedin.com/in/votre-profil"
+                href="https://www.linkedin.com/in/eudes-hermann-ekouandja-94a796338"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-[#222632] rounded-lg hover:bg-[#0EA5E9]/10 transition-colors"
