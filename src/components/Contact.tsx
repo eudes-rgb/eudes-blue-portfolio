@@ -127,7 +127,7 @@ export const Contact = () => {
             <Button 
               variant="outline" 
               className="w-full border-[#0EA5E9]/20 hover:bg-[#0EA5E9]/10"
-              onClick={() => window.open('/path-to-your-cv.pdf', '_blank')}
+              onClick={() => window.open('https://cvdesignr.com/p/6702aa12d4d9c', '_blank')}
             >
               Télécharger mon CV
             </Button>
