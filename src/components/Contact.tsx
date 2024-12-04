@@ -113,7 +113,7 @@ export const Contact = () => {
                 <Linkedin className="w-6 h-6 text-[#0EA5E9]" />
               </a>
               <a
-                href="https://www.instagram.com/votre-profil"
+                href="https://www.instagram.com/ekouandja_hermann/profilecard/?igsh=enl6YmlmMm9pcHIw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-[#222632] rounded-lg hover:bg-[#0EA5E9]/10 transition-colors"
