@@ -12,7 +12,7 @@ export const Projects = () => {
         "Installation des paquets essentiels",
         "Personnalisation de l'interface utilisateur"
       ],
-      pdfUrl: "/path-to-your-pdf/ubuntu-installation.pdf" // Replace with actual PDF path
+      pdfUrl: "https://gamma.app/docs/Installation-dUbuntu-sur-VirtualBox-q3zhivgfaggua7d"
     }
     // Add more projects here
   ];
@@ -21,17 +21,17 @@ export const Projects = () => {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://www.linkedin.com/in/your-profile" // Replace with your LinkedIn URL
+      url: "https://www.linkedin.com/in/eudes-hermann-ekouandja-94a796338"
     },
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://www.instagram.com/your-profile" // Replace with your Instagram URL
+      url: "https://www.instagram.com/ekouandja_hermann/profilecard/?igsh=enl6YmlmMm9pcHIw"
     },
     {
       name: "Facebook",
       icon: Facebook,
-      url: "https://www.facebook.com/your-profile" // Replace with your Facebook URL
+      url: "https://www.facebook.com/your-profile" // Keep this as is since no Facebook URL was provided
     }
   ];
 
