@@ -29,7 +29,7 @@ export const Header = () => {
             </div>
             <div className="flex items-center gap-3 hover:text-[#0EA5E9] transition-colors p-3 rounded-lg hover:bg-[#252A38]">
               <Calendar className="w-5 h-5" />
-              <span>Date de naissance: 26/06/2000</span>
+              <span>Date de naissance: 26/05/2000</span>
             </div>
           </div>
         </div>
