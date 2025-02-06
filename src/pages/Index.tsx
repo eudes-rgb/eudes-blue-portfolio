@@ -34,25 +34,26 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen relative">
-      {/* Background Image */}
+    <div className="min-h-screen relative bg-[#0f172a]">
+      {/* Background Image with Overlay */}
       <div 
-        className="fixed inset-0 z-0"
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1487958449943-2429e8be8625")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'brightness(0.3)'
+          backgroundRepeat: 'no-repeat'
         }}
-      />
+      >
+        <div className="absolute inset-0 bg-black/70" /> {/* Dark overlay */}
+      </div>
       
       {/* Content */}
       <div className="relative z-10">
         <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
         <main 
           className={cn(
-            "min-h-screen transition-all duration-300 backdrop-blur-sm",
+            "min-h-screen transition-all duration-300 backdrop-blur-sm bg-black/30",
             isMobile ? "ml-0 pt-16" : "ml-64"
           )}
         >
