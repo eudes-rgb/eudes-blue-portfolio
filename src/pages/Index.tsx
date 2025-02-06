@@ -34,16 +34,33 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#222632]">
-      <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
-      <main className={cn(
-        "min-h-screen transition-all duration-300",
-        isMobile ? "ml-0 pt-16" : "ml-64"
-      )}>
-        <div className="container mx-auto py-8 px-4 md:px-8 text-white">
-          {renderContent()}
-        </div>
-      </main>
+    <div className="min-h-screen relative">
+      {/* Background Image */}
+      <div 
+        className="fixed inset-0 z-0"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1487958449943-2429e8be8625")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'brightness(0.3)'
+        }}
+      />
+      
+      {/* Content */}
+      <div className="relative z-10">
+        <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
+        <main 
+          className={cn(
+            "min-h-screen transition-all duration-300 backdrop-blur-sm",
+            isMobile ? "ml-0 pt-16" : "ml-64"
+          )}
+        >
+          <div className="container mx-auto py-8 px-4 md:px-8 text-white">
+            {renderContent()}
+          </div>
+        </main>
+      </div>
     </div>
   );
 };

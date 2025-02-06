@@ -69,7 +69,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
                     "w-full px-4 py-3 rounded-lg flex items-center gap-3 transition-all duration-300",
                     activeTab === tab.id
                       ? "bg-[#0EA5E9] text-white"
-                      : "text-gray-400 hover:bg-[#2A2F3C] hover:text-[#0EA5E9]"
+                      : "text-gray-400 hover:bg-white/10 hover:text-[#0EA5E9]"
                   )}
                 >
                   <Icon className="w-5 h-5" />
@@ -101,14 +101,14 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
       <>
         <button
           onClick={toggleMenu}
-          className="fixed top-4 left-4 z-50 p-2 rounded-lg bg-[#1A1F2C] text-white"
+          className="fixed top-4 left-4 z-50 p-2 rounded-lg bg-black/50 backdrop-blur-lg text-white"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         
         <aside
           className={cn(
-            "fixed left-0 top-0 h-full w-64 bg-[#1A1F2C] p-6 shadow-xl transition-transform duration-300 z-40",
+            "fixed left-0 top-0 h-full w-64 bg-black/50 backdrop-blur-lg p-6 shadow-xl transition-transform duration-300 z-40",
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           )}
         >
@@ -119,7 +119,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
   }
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-64 bg-[#1A1F2C] p-6 shadow-xl">
+    <aside className="fixed left-0 top-0 h-full w-64 bg-black/50 backdrop-blur-lg p-6 shadow-xl">
       {navContent}
     </aside>
   );
