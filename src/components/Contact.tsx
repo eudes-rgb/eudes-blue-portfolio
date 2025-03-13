@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -127,7 +128,7 @@ export const Contact = () => {
             <Button 
               variant="outline" 
               className="w-full border-[#0EA5E9]/20 hover:bg-[#0EA5E9]/10"
-              onClick={() => window.open('https://cvdesignr.com/p/6702aa12d4d9c', '_blank')}
+              onClick={() => window.open('https://cvdesignr.com/p/9LokwK4kLppdo1b', '_blank')}
             >
               Télécharger mon CV
             </Button>
