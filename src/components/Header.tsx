@@ -1,7 +1,31 @@
+
 import { cn } from "@/lib/utils";
 import { Mail, Phone, MapPin, Calendar } from "lucide-react";
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem
+} from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const descriptions = [
+    "Étudiant en BTS SIO passionné par l'administration des systèmes et réseaux.",
+    "À la recherche d'un stage pour mettre en pratique mes compétences.",
+    "Spécialiste en solutions informatiques et réseaux d'entreprise.",
+    "Passionné par les nouvelles technologies et la cybersécurité."
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % descriptions.length);
+    }, 3000); // Change de texte toutes les 3 secondes
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header className="py-20 bg-[#1A1F2C] text-white animate-fade-in">
       <div className="container mx-auto px-4">
@@ -9,11 +33,28 @@ export const Header = () => {
           <h1 className="text-4xl font-bold mb-6 text-[#0EA5E9] animate-slide-in">
             Eudes-Hermann EKOUANDJA
           </h1>
-          <p className="text-xl text-gray-300 mb-10 leading-relaxed">
-            Étudiant en BTS SIO passionné par l'administration des systèmes et
-            réseaux, à la recherche d'un stage pour mettre en pratique mes
-            compétences.
-          </p>
+          <div className="h-20 mb-10">
+            <Carousel 
+              className="w-full" 
+              opts={{
+                align: "center",
+                loop: true,
+              }}
+            >
+              <CarouselContent>
+                {descriptions.map((desc, index) => (
+                  <CarouselItem key={index} className={cn(
+                    "transition-opacity duration-500",
+                    currentSlide === index ? "opacity-100" : "opacity-0"
+                  )}>
+                    <p className="text-xl text-gray-300 leading-relaxed">
+                      {desc}
+                    </p>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300 max-w-2xl mx-auto">
             <div className="flex items-center gap-3 hover:text-[#0EA5E9] transition-colors p-3 rounded-lg hover:bg-[#252A38]">
               <Mail className="w-5 h-5" />
