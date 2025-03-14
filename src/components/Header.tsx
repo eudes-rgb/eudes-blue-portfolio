@@ -21,7 +21,7 @@ export const Header = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % descriptions.length);
-    }, 5000); // Change text every 5 seconds for better readability
+    }, 3000); // Change de texte toutes les 3 secondes
 
     return () => clearInterval(interval);
   }, []);
@@ -33,7 +33,7 @@ export const Header = () => {
           <h1 className="text-4xl font-bold mb-6 text-[#0EA5E9] animate-slide-in">
             Eudes-Hermann EKOUANDJA
           </h1>
-          <div className="h-28 mb-10 overflow-hidden relative">
+          <div className="h-24 mb-10 overflow-hidden relative">
             <Carousel 
               className="w-full" 
               opts={{
@@ -56,7 +56,6 @@ export const Header = () => {
                           className="inline-block animate-wave-char"
                           style={{ 
                             animationDelay: `${charIndex * 0.05}s`,
-                            fontWeight: "500"
                           }}
                         >
                           {char === ' ' ? '\u00A0' : char}

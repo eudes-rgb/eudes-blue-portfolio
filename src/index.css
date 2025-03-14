@@ -53,12 +53,11 @@
 
 /* Animation pour l'effet de vague par caractère */
 .wave-text-container {
-  @apply text-2xl text-gray-100 leading-relaxed;
+  @apply text-xl text-gray-300 leading-relaxed;
   display: inline-block;
-  padding: 12px 0;
+  padding: 8px 0;
   width: 100%;
-  min-height: 70px;
-  letter-spacing: 0.5px;
+  min-height: 60px;
 }
 
 @keyframes wave {
