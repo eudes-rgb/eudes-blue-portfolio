@@ -33,7 +33,7 @@ export const Header = () => {
           <h1 className="text-4xl font-bold mb-6 text-[#0EA5E9] animate-slide-in">
             Eudes-Hermann EKOUANDJA
           </h1>
-          <div className="h-20 mb-10">
+          <div className="h-20 mb-10 overflow-hidden relative">
             <Carousel 
               className="w-full" 
               opts={{
@@ -44,12 +44,24 @@ export const Header = () => {
               <CarouselContent>
                 {descriptions.map((desc, index) => (
                   <CarouselItem key={index} className={cn(
-                    "transition-opacity duration-500",
-                    currentSlide === index ? "opacity-100" : "opacity-0"
+                    "transition-all duration-1000",
+                    currentSlide === index 
+                      ? "opacity-100 animate-wave-text" 
+                      : "opacity-0 transform translate-y-8"
                   )}>
-                    <p className="text-xl text-gray-300 leading-relaxed">
-                      {desc}
-                    </p>
+                    <div className="wave-text-container">
+                      {desc.split('').map((char, charIndex) => (
+                        <span 
+                          key={charIndex}
+                          className="inline-block animate-wave-char"
+                          style={{ 
+                            animationDelay: `${charIndex * 0.05}s`,
+                          }}
+                        >
+                          {char === ' ' ? '\u00A0' : char}
+                        </span>
+                      ))}
+                    </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
