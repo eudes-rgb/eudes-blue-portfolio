@@ -33,7 +33,7 @@ export const Header = () => {
           <h1 className="text-4xl font-bold mb-6 text-[#0EA5E9] animate-slide-in">
             Eudes-Hermann EKOUANDJA
           </h1>
-          <div className="h-20 mb-10 overflow-hidden relative">
+          <div className="h-24 mb-10 overflow-hidden relative">
             <Carousel 
               className="w-full" 
               opts={{

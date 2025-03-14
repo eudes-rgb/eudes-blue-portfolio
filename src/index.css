@@ -55,6 +55,9 @@
 .wave-text-container {
   @apply text-xl text-gray-300 leading-relaxed;
   display: inline-block;
+  padding: 8px 0;
+  width: 100%;
+  min-height: 60px;
 }
 
 @keyframes wave {
