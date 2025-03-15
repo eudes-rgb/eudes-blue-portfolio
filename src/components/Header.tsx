@@ -13,7 +13,7 @@ export const Header = () => {
   
   const descriptions = [
     "Étudiant en BTS SIO passionné par l'administration des systèmes et réseaux.",
-    "À la recherche d'un stage pour mettre en pratique mes compétences.",
+    "À la recherche d'un stage en réseaux informatique pour la période du 26 Mai au 25 Juin 2025.",
     "Spécialiste en solutions informatiques et réseaux d'entreprise.",
     "Passionné par les nouvelles technologies et la cybersécurité."
   ];
