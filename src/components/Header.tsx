@@ -56,6 +56,7 @@ export const Header = () => {
                           className="inline-block animate-wave-char"
                           style={{ 
                             animationDelay: `${charIndex * 0.05}s`,
+                            marginRight: char === ' ' ? '0.25rem' : '0.05rem', // Add extra space after words
                           }}
                         >
                           {char === ' ' ? '\u00A0' : char}
