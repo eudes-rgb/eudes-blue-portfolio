@@ -1,6 +1,4 @@
 
-import { useState } from "react";
-import { Navigation } from "@/components/Navigation";
 import { Header } from "@/components/Header";
 import { Skills } from "@/components/Skills";
 import { Contact } from "@/components/Contact";
@@ -8,13 +6,9 @@ import { About } from "@/components/About";
 import { Projects } from "@/components/Projects";
 import { Formations } from "@/components/Formations";
 import { Experiences } from "@/components/Experiences";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState("accueil");
-  const isMobile = useIsMobile();
-
   // Array of background images
   const bgImages = [
     'https://images.unsplash.com/photo-1587620962725-abab7fe55159', // Server rack
@@ -23,25 +17,6 @@ const Index = () => {
     'https://images.unsplash.com/photo-1531297484001-80022131f5a1', // Laptop with code
     'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b', // Computer setup
   ];
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case "competences":
-        return <Skills />;
-      case "about":
-        return <About />;
-      case "projets":
-        return <Projects />;
-      case "contact":
-        return <Contact />;
-      case "formations":
-        return <Formations />;
-      case "experiences":
-        return <Experiences />;
-      default:
-        return <Header />;
-    }
-  };
 
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-gray-900 to-black">
@@ -56,7 +31,7 @@ const Index = () => {
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
-              opacity: 0.4, // Increased from 0.15 to 0.4 for better visibility
+              opacity: 0.4,
               animation: `fadeInOut 25s ${index * 5}s infinite`,
               zIndex: index
             }}
@@ -67,16 +42,28 @@ const Index = () => {
       
       {/* Content */}
       <div className="relative z-10">
-        <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
-        <main 
-          className={cn(
-            "min-h-screen transition-all duration-300",
-            isMobile ? "ml-0 pt-16" : "ml-64"
-          )}
-        >
+        <main>
           <div className="container mx-auto py-8 px-4 md:px-8">
             <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-white/10">
-              {renderContent()}
+              <Header />
+              <div className="mt-12">
+                <About />
+              </div>
+              <div className="mt-12">
+                <Skills />
+              </div>
+              <div className="mt-12">
+                <Formations />
+              </div>
+              <div className="mt-12">
+                <Experiences />
+              </div>
+              <div className="mt-12">
+                <Projects />
+              </div>
+              <div className="mt-12">
+                <Contact />
+              </div>
             </div>
           </div>
         </main>
