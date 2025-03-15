@@ -56,13 +56,13 @@ const Index = () => {
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
-              opacity: 0.15,
+              opacity: 0.4, // Increased from 0.15 to 0.4 for better visibility
               animation: `fadeInOut 25s ${index * 5}s infinite`,
               zIndex: index
             }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 to-black/90 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 to-black/70 z-10"></div>
       </div>
       
       {/* Content */}
@@ -75,7 +75,7 @@ const Index = () => {
           )}
         >
           <div className="container mx-auto py-8 px-4 md:px-8">
-            <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 shadow-xl border border-white/10">
+            <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-white/10">
               {renderContent()}
             </div>
           </div>
