@@ -51,6 +51,12 @@
   }
 }
 
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 0.15; }
+  50% { opacity: 0.2; }
+}
+
 /* Animation pour l'effet de vague par caractère */
 .wave-text-container {
   @apply text-xl text-gray-300 leading-relaxed;

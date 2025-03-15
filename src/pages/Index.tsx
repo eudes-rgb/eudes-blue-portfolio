@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Header } from "@/components/Header";
@@ -13,6 +14,15 @@ import { cn } from "@/lib/utils";
 const Index = () => {
   const [activeTab, setActiveTab] = useState("accueil");
   const isMobile = useIsMobile();
+
+  // Array of background images
+  const bgImages = [
+    'https://images.unsplash.com/photo-1587620962725-abab7fe55159', // Server rack
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31', // Server room
+    'https://images.unsplash.com/photo-1558126357-9a3c53771765', // Network cables
+    'https://images.unsplash.com/photo-1531297484001-80022131f5a1', // Laptop with code
+    'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b', // Computer setup
+  ];
 
   const renderContent = () => {
     switch (activeTab) {
@@ -35,16 +45,25 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-gray-900 to-black">
-      {/* Background Image with Overlay */}
-      <div 
-        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1487958449943-2429e8be8625")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
+      {/* Multiple Background Images with Overlay */}
+      <div className="fixed inset-0 z-0">
+        {bgImages.map((img, index) => (
+          <div 
+            key={index}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0"
+            style={{
+              backgroundImage: `url("${img}")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              opacity: 0.15,
+              animation: `fadeInOut 25s ${index * 5}s infinite`,
+              zIndex: index
+            }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 to-black/90 z-10"></div>
+      </div>
       
       {/* Content */}
       <div className="relative z-10">
