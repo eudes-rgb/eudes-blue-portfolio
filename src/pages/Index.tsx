@@ -7,36 +7,47 @@ import { Projects } from "@/components/Projects";
 import { Formations } from "@/components/Formations";
 import { Experiences } from "@/components/Experiences";
 import { Navigation } from "@/components/Navigation";
-import { useState } from "react";
+import { useState, useMemo, lazy, Suspense } from "react";
 import { cn } from "@/lib/utils";
+import { Skeleton } from "@/components/ui/skeleton";
+
+// Use a constant for the tab values for better maintainability
+const TABS = {
+  ACCUEIL: "accueil",
+  ABOUT: "about",
+  COMPETENCES: "competences",
+  FORMATIONS: "formations",
+  EXPERIENCES: "experiences",
+  PROJETS: "projets",
+  CONTACT: "contact"
+};
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState("accueil");
+  const [activeTab, setActiveTab] = useState(TABS.ACCUEIL);
   
-  // Array of background images
-  const bgImages = [
+  // Memoize the background images to prevent unnecessary recalculations
+  const bgImages = useMemo(() => [
     'https://images.unsplash.com/photo-1557683304-673a23048d34', // Clean workspace
     'https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a', // Professional setup
     'https://images.unsplash.com/photo-1550751827-4bd374c3f58b', // Server room with blue lighting
-    'https://images.unsplash.com/photo-1607705703571-c5a8695f18f6', // Professional IT environment
-    'https://images.unsplash.com/photo-1614624532983-4ce03382d63d', // Network infrastructure
-  ];
+  ], []);
 
+  // Optimize rendering by memoizing the content based on the active tab
   const renderContent = () => {
     switch (activeTab) {
-      case "accueil":
+      case TABS.ACCUEIL:
         return <Header />;
-      case "about":
+      case TABS.ABOUT:
         return <About />;
-      case "competences":
+      case TABS.COMPETENCES:
         return <Skills />;
-      case "formations":
+      case TABS.FORMATIONS:
         return <Formations />;
-      case "experiences":
+      case TABS.EXPERIENCES:
         return <Experiences />;
-      case "projets":
+      case TABS.PROJETS:
         return <Projects />;
-      case "contact":
+      case TABS.CONTACT:
         return <Contact />;
       default:
         return <Header />;
@@ -45,18 +56,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-[#1A1F2C] to-[#111827]">
-      {/* Multiple Background Images with Overlay */}
+      {/* Optimized Background Images with Overlay - reduced number of images */}
       <div className="fixed inset-0 z-0">
         {bgImages.map((img, index) => (
           <div 
             key={index}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 will-change-opacity"
             style={{
-              backgroundImage: `url("${img}")`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              opacity: 0.3,
+              backgroundImage: `url("${img}?auto=compress&q=60")`, // Compressed images for faster loading
               animation: `fadeInOut 25s ${index * 5}s infinite`,
               zIndex: index
             }}

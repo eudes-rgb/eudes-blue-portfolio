@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -76,50 +77,31 @@
   animation: slideIn 0.8s ease-out forwards;
 }
 
-/* Autres styles existants */
-/* Animation pour l'effet de vague par caractère */
+/* Cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}
+
+/* Wave text animations with optimized performance */
 .wave-text-container {
   @apply text-xl text-gray-300 leading-relaxed;
   display: inline-block;
   padding: 8px 0;
   width: 100%;
   min-height: 60px;
-  letter-spacing: 0.05em; /* Added letter spacing for better readability */
+  letter-spacing: 0.05em;
 }
 
-@keyframes wave {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-8px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(4px);
-  }
+/* Optimized animations for low-end devices */
+.will-change-transform {
+  will-change: transform;
 }
 
-.animate-wave-char {
-  animation: wave 2s ease-in-out infinite;
-  display: inline-block;
-  transform-origin: bottom center;
-}
-
-/* Animation pour l'ensemble du texte */
-@keyframes waveText {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.animate-wave-text {
-  animation: waveText 0.5s ease-out forwards;
+.will-change-opacity {
+  will-change: opacity;
 }
