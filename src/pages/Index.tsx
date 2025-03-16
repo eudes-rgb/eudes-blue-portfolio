@@ -6,9 +6,13 @@ import { About } from "@/components/About";
 import { Projects } from "@/components/Projects";
 import { Formations } from "@/components/Formations";
 import { Experiences } from "@/components/Experiences";
+import { Navigation } from "@/components/Navigation";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState("accueil");
+  
   // Array of background images
   const bgImages = [
     'https://images.unsplash.com/photo-1587620962725-abab7fe55159', // Server rack
@@ -17,6 +21,27 @@ const Index = () => {
     'https://images.unsplash.com/photo-1531297484001-80022131f5a1', // Laptop with code
     'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b', // Computer setup
   ];
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "accueil":
+        return <Header />;
+      case "about":
+        return <About />;
+      case "competences":
+        return <Skills />;
+      case "formations":
+        return <Formations />;
+      case "experiences":
+        return <Experiences />;
+      case "projets":
+        return <Projects />;
+      case "contact":
+        return <Contact />;
+      default:
+        return <Header />;
+    }
+  };
 
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-gray-900 to-black">
@@ -40,30 +65,15 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 to-black/70 z-10"></div>
       </div>
       
+      {/* Navigation */}
+      <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
+      
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 md:ml-64">
         <main>
           <div className="container mx-auto py-8 px-4 md:px-8">
             <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-white/10">
-              <Header />
-              <div className="mt-12">
-                <About />
-              </div>
-              <div className="mt-12">
-                <Skills />
-              </div>
-              <div className="mt-12">
-                <Formations />
-              </div>
-              <div className="mt-12">
-                <Experiences />
-              </div>
-              <div className="mt-12">
-                <Projects />
-              </div>
-              <div className="mt-12">
-                <Contact />
-              </div>
+              {renderContent()}
             </div>
           </div>
         </main>
