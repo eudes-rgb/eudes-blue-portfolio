@@ -1,6 +1,7 @@
 
 import { cn } from "@/lib/utils";
 import { Mail, Phone, MapPin, Calendar } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   const descriptions = [
@@ -8,10 +9,31 @@ export const Header = () => {
     "À la recherche d'un stage en réseaux informatique pour la période du 26 Mai au 25 Juin 2025.",
   ];
 
+  const [displayText, setDisplayText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const welcomeText = "Bienvenue sur mon portfolio";
+
+  useEffect(() => {
+    if (currentIndex < welcomeText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + welcomeText[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 100);
+      
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, welcomeText]);
+
   return (
     <header className="py-20 bg-gradient-to-b from-[#111827]/70 to-[#1A1F2C]/50 text-white rounded-lg animate-fade-in">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-6 h-10">
+            <h2 className="text-2xl md:text-3xl font-light text-[#0EA5E9] tracking-wide">
+              {displayText}
+              <span className="animate-pulse">|</span>
+            </h2>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#0EA5E9] animate-slide-in">
             Eudes-Hermann EKOUANDJA
           </h1>
