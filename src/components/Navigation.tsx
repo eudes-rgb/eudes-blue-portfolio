@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Home, User, Book, Mail, Terminal, Menu, X, GraduationCap, Briefcase } from "lucide-react";
@@ -43,7 +44,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
       <div className="mb-8">
         <div className="relative w-32 h-32 mx-auto mb-4">
           <img
-            src="/lovable-uploads/74f3b0c3-9c34-4644-809a-9ba228f2cb47.png"
+            src="/lovable-uploads/dbdae958-60f2-4a66-aad1-b6df1a503956.png"
             alt="Eudes Hermann"
             className="rounded-full border-4 border-[#0EA5E9] w-full h-full object-cover"
           />

@@ -52,10 +52,31 @@
 
 @keyframes fadeInOut {
   0%, 100% { opacity: 0; }
-  25%, 75% { opacity: 0.4; } /* Increased from 0.15 to 0.4 */
-  50% { opacity: 0.6; } /* Increased from 0.2 to 0.6 */
+  25%, 75% { opacity: 0.3; }
+  50% { opacity: 0.4; }
 }
 
+.letter-spacing-wide {
+  letter-spacing: 0.025em;
+}
+
+/* Animation pour l'effet de slide */
+@keyframes slideIn {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+/* Autres styles existants */
 /* Animation pour l'effet de vague par caractère */
 .wave-text-container {
   @apply text-xl text-gray-300 leading-relaxed;

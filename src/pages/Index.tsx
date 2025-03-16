@@ -15,11 +15,11 @@ const Index = () => {
   
   // Array of background images
   const bgImages = [
-    'https://images.unsplash.com/photo-1587620962725-abab7fe55159', // Server rack
-    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31', // Server room
-    'https://images.unsplash.com/photo-1558126357-9a3c53771765', // Network cables
-    'https://images.unsplash.com/photo-1531297484001-80022131f5a1', // Laptop with code
-    'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b', // Computer setup
+    'https://images.unsplash.com/photo-1557683304-673a23048d34', // Clean workspace
+    'https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a', // Professional setup
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b', // Server room with blue lighting
+    'https://images.unsplash.com/photo-1607705703571-c5a8695f18f6', // Professional IT environment
+    'https://images.unsplash.com/photo-1614624532983-4ce03382d63d', // Network infrastructure
   ];
 
   const renderContent = () => {
@@ -44,7 +44,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-gray-900 to-black">
+    <div className="min-h-screen relative bg-gradient-to-br from-[#1A1F2C] to-[#111827]">
       {/* Multiple Background Images with Overlay */}
       <div className="fixed inset-0 z-0">
         {bgImages.map((img, index) => (
@@ -56,13 +56,13 @@ const Index = () => {
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
-              opacity: 0.4,
+              opacity: 0.3,
               animation: `fadeInOut 25s ${index * 5}s infinite`,
               zIndex: index
             }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 to-black/70 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1A1F2C]/80 to-[#111827]/90 z-10"></div>
       </div>
       
       {/* Navigation */}
@@ -72,7 +72,7 @@ const Index = () => {
       <div className="relative z-10 md:ml-64">
         <main>
           <div className="container mx-auto py-8 px-4 md:px-8">
-            <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-white/10">
+            <div className="bg-[#111827]/60 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-[#1E3A8A]/20">
               {renderContent()}
             </div>
           </div>
