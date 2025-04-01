@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Home, User, Book, Mail, Terminal, Menu, X, GraduationCap, Briefcase } from "lucide-react";
@@ -49,6 +48,9 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
             alt="Eudes Hermann"
             className="rounded-full border-4 border-[#0EA5E9] dark:border-blue-400 w-full h-full object-cover"
           />
+          <div className="absolute -bottom-2 -right-2">
+            <ThemeToggle />
+          </div>
         </div>
         <h1 className="text-2xl font-bold text-white text-center mb-2">Eudes Hermann</h1>
         <p className="text-gray-400 text-center text-sm">Étudiant en BTS SIO</p>
@@ -93,10 +95,6 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
             <Terminal className="w-4 h-4" />
             06 41 03 98 00
           </p>
-        </div>
-        
-        <div className="flex justify-center pt-2">
-          <ThemeToggle />
         </div>
       </div>
     </div>

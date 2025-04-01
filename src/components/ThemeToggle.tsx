@@ -15,6 +15,7 @@ export function ThemeToggle() {
           size="icon" 
           className="rounded-full bg-black/10 dark:bg-white/10 backdrop-blur-sm border-2 border-blue-500/50 hover:border-blue-400 hover:bg-blue-500/10 relative"
         >
+          <div className="absolute inset-0 rounded-full bg-blue-500/10 animate-pulse-slow"></div>
           <Palette className="h-5 w-5 absolute opacity-0 scale-0 transition-all" />
           <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-yellow-500" />
           <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-blue-400" />
