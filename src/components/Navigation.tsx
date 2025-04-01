@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Home, User, Book, Mail, Terminal, Menu, X, GraduationCap, Briefcase } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { ThemeToggle } from "./ThemeToggle";
 
 type Tab = {
   id: string;
@@ -46,7 +47,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
           <img
             src="/lovable-uploads/dbdae958-60f2-4a66-aad1-b6df1a503956.png"
             alt="Eudes Hermann"
-            className="rounded-full border-4 border-[#0EA5E9] w-full h-full object-cover"
+            className="rounded-full border-4 border-[#0EA5E9] dark:border-blue-400 w-full h-full object-cover"
           />
         </div>
         <h1 className="text-2xl font-bold text-white text-center mb-2">Eudes Hermann</h1>
@@ -69,8 +70,8 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
                   className={cn(
                     "w-full px-4 py-3 rounded-lg flex items-center gap-3 transition-all duration-300",
                     activeTab === tab.id
-                      ? "bg-[#0EA5E9] text-white"
-                      : "text-gray-400 hover:bg-white/10 hover:text-[#0EA5E9]"
+                      ? "bg-[#0EA5E9] dark:bg-blue-500 text-white"
+                      : "text-gray-400 hover:bg-white/10 hover:text-[#0EA5E9] dark:hover:text-blue-400"
                   )}
                 >
                   <Icon className="w-5 h-5" />
@@ -82,7 +83,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
         </ul>
       </nav>
       
-      <div className="mt-auto pt-4">
+      <div className="mt-auto pt-4 space-y-4">
         <div className="text-gray-400 text-sm space-y-2">
           <p className="flex items-center gap-2">
             <Mail className="w-4 h-4" />
@@ -92,6 +93,10 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
             <Terminal className="w-4 h-4" />
             06 41 03 98 00
           </p>
+        </div>
+        
+        <div className="flex justify-center">
+          <ThemeToggle />
         </div>
       </div>
     </div>
