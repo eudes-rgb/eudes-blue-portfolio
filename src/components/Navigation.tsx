@@ -106,15 +106,15 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
   if (isMobile) {
     return (
       <>
-        <div className="fixed top-4 left-4 z-50 flex items-center gap-2">
+        <div className="fixed top-4 left-4 z-50 flex items-center gap-3">
           <button
             onClick={toggleMenu}
-            className="p-2 rounded-lg bg-black/50 backdrop-blur-lg text-white"
+            className="p-2 rounded-lg bg-black/60 backdrop-blur-lg text-white border border-blue-500/30 shadow-md shadow-blue-500/20"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
           
-          <div className="ml-2">
+          <div className="animate-pulse-slow">
             <ThemeToggle />
           </div>
         </div>
