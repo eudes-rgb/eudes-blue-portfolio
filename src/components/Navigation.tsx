@@ -95,22 +95,29 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
           </p>
         </div>
         
-        <div className="flex justify-center">
+        <div className="flex justify-center pt-2">
           <ThemeToggle />
         </div>
       </div>
     </div>
   );
 
+  // Mobile navigation with theme toggle in the menu button area
   if (isMobile) {
     return (
       <>
-        <button
-          onClick={toggleMenu}
-          className="fixed top-4 left-4 z-50 p-2 rounded-lg bg-black/50 backdrop-blur-lg text-white"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="fixed top-4 left-4 z-50 flex items-center gap-2">
+          <button
+            onClick={toggleMenu}
+            className="p-2 rounded-lg bg-black/50 backdrop-blur-lg text-white"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          
+          <div className="ml-2">
+            <ThemeToggle />
+          </div>
+        </div>
         
         <aside
           className={cn(
@@ -129,4 +136,4 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
       {navContent}
     </aside>
   );
-};
+}
