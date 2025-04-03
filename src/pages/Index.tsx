@@ -24,12 +24,10 @@ const TABS = {
 const Index = () => {
   const [activeTab, setActiveTab] = useState(TABS.ACCUEIL);
   
-  // Memoize the background images to prevent unnecessary recalculations
-  const bgImages = useMemo(() => [
-    'https://images.unsplash.com/photo-1557683304-673a23048d34', // Clean workspace
-    'https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a', // Professional setup
-    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b', // Server room with blue lighting
-  ], []);
+  // Memoize the main background image
+  const bgImage = useMemo(() => 
+    'https://www.curvature.com/wp-content/uploads/2023/11/dell-poweredge-servers.webp', 
+  []);
 
   // Optimize rendering by memoizing the content based on the active tab
   const renderContent = () => {
@@ -55,19 +53,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-[#1A1F2C] to-[#111827] dark:from-slate-900 dark:to-slate-950">
-      {/* Optimized Background Images with Overlay - reduced number of images */}
+      {/* Background Image with Overlay */}
       <div className="fixed inset-0 z-0">
-        {bgImages.map((img, index) => (
-          <div 
-            key={index}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 will-change-opacity"
-            style={{
-              backgroundImage: `url("${img}?auto=compress&q=60")`, // Compressed images for faster loading
-              animation: `fadeInOut 25s ${index * 5}s infinite`,
-              zIndex: index
-            }}
-          />
-        ))}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 will-change-opacity"
+          style={{
+            backgroundImage: `url("${bgImage}")`,
+          }}
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-[#1A1F2C]/80 to-[#111827]/90 dark:from-slate-900/90 dark:to-slate-950/95 z-10"></div>
       </div>
       
