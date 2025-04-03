@@ -7,8 +7,9 @@ import { Projects } from "@/components/Projects";
 import { Formations } from "@/components/Formations";
 import { Experiences } from "@/components/Experiences";
 import { Navigation } from "@/components/Navigation";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { BackgroundCarousel } from "@/components/BackgroundCarousel";
 
 // Use a constant for the tab values for better maintainability
 const TABS = {
@@ -24,11 +25,6 @@ const TABS = {
 const Index = () => {
   const [activeTab, setActiveTab] = useState(TABS.ACCUEIL);
   
-  // Memoize the main background image
-  const bgImage = useMemo(() => 
-    'https://www.curvature.com/wp-content/uploads/2023/11/dell-poweredge-servers.webp', 
-  []);
-
   // Optimize rendering by memoizing the content based on the active tab
   const renderContent = () => {
     switch (activeTab) {
@@ -53,16 +49,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-[#1A1F2C] to-[#111827] dark:from-slate-900 dark:to-slate-950">
-      {/* Background Image with Overlay */}
-      <div className="fixed inset-0 z-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 will-change-opacity"
-          style={{
-            backgroundImage: `url("${bgImage}")`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1A1F2C]/60 to-[#111827]/70 dark:from-slate-900/70 dark:to-slate-950/80 z-10"></div>
-      </div>
+      {/* Background Carousel */}
+      <BackgroundCarousel />
       
       {/* Navigation */}
       <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
