@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Home, User, Book, Mail, Terminal, Menu, X, GraduationCap, Briefcase } from "lucide-react";
@@ -100,21 +101,17 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
     </div>
   );
 
-  // Mobile navigation with theme toggle in the menu button area
+  // Mobile navigation with menu button only (theme toggle removed from here)
   if (isMobile) {
     return (
       <>
-        <div className="fixed top-4 left-4 z-50 flex items-center gap-3">
+        <div className="fixed top-4 left-4 z-50">
           <button
             onClick={toggleMenu}
             className="p-2 rounded-lg bg-black/60 backdrop-blur-lg text-white border border-blue-500/30 shadow-md shadow-blue-500/20"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-          
-          <div className="animate-pulse-slow">
-            <ThemeToggle />
-          </div>
         </div>
         
         <aside
