@@ -7,8 +7,7 @@ import { Projects } from "@/components/Projects";
 import { Formations } from "@/components/Formations";
 import { Experiences } from "@/components/Experiences";
 import { Navigation } from "@/components/Navigation";
-import { useState, useMemo, useEffect } from "react";
-import { cn } from "@/lib/utils";
+import { useState, useMemo } from "react";
 import { BackgroundCarousel } from "@/components/BackgroundCarousel";
 
 // Use a constant for the tab values for better maintainability
@@ -58,8 +57,8 @@ const Index = () => {
       {/* Content */}
       <div className="relative z-10 md:ml-64">
         <main>
-          <div className="container mx-auto py-8 px-4 md:px-8">
-            <div className="bg-[#111827]/60 dark:bg-slate-950/60 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-[#1E3A8A]/20 dark:border-blue-900/20">
+          <div className="container mx-auto py-4 px-4 md:py-8 md:px-8">
+            <div className="bg-[#111827]/60 dark:bg-slate-950/60 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-xl border border-[#1E3A8A]/20 dark:border-blue-900/20">
               {renderContent()}
             </div>
           </div>

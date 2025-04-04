@@ -36,6 +36,25 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
     }
   }, [isMobile]);
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const menu = document.getElementById("mobile-menu");
+      const menuButton = document.getElementById("menu-button");
+      
+      if (menu && !menu.contains(event.target as Node) && 
+          menuButton && !menuButton.contains(event.target as Node) && 
+          isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -43,7 +62,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
   const navContent = (
     <div className="flex flex-col h-full">
       <div className="mb-8">
-        <div className="relative w-32 h-32 mx-auto mb-4">
+        <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto mb-4">
           <img
             src="/lovable-uploads/dbdae958-60f2-4a66-aad1-b6df1a503956.png"
             alt="Eudes Hermann"
@@ -53,11 +72,11 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
             <ThemeToggle />
           </div>
         </div>
-        <h1 className="text-2xl font-bold text-white text-center mb-2">Eudes Hermann</h1>
+        <h1 className="text-xl md:text-2xl font-bold text-white text-center mb-2">Eudes Hermann</h1>
         <p className="text-gray-400 text-center text-sm">Étudiant en BTS SIO</p>
       </div>
       
-      <nav className="flex-1">
+      <nav className="flex-1 overflow-y-auto">
         <ul className="space-y-2">
           {tabs.map((tab) => {
             const Icon = tab.icon;
@@ -89,34 +108,36 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
       <div className="mt-auto pt-4 space-y-4">
         <div className="text-gray-400 text-sm space-y-2">
           <p className="flex items-center gap-2">
-            <Mail className="w-4 h-4" />
-            ekouandja-eh@saint-louis29.net
+            <Mail className="w-4 h-4 flex-shrink-0" />
+            <span className="truncate">ekouandja-eh@saint-louis29.net</span>
           </p>
           <p className="flex items-center gap-2">
-            <Terminal className="w-4 h-4" />
-            06 41 03 98 00
+            <Terminal className="w-4 h-4 flex-shrink-0" />
+            <span>06 41 03 98 00</span>
           </p>
         </div>
       </div>
     </div>
   );
 
-  // Mobile navigation with menu button only (theme toggle removed from here)
   if (isMobile) {
     return (
       <>
         <div className="fixed top-4 left-4 z-50">
           <button
+            id="menu-button"
             onClick={toggleMenu}
             className="p-2 rounded-lg bg-black/60 backdrop-blur-lg text-white border border-blue-500/30 shadow-md shadow-blue-500/20"
+            aria-label="Menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
         
         <aside
+          id="mobile-menu"
           className={cn(
-            "fixed left-0 top-0 h-full w-64 bg-black/50 backdrop-blur-lg p-6 shadow-xl transition-transform duration-300 z-40",
+            "fixed left-0 top-0 h-full w-72 bg-black/80 backdrop-blur-lg p-6 shadow-xl transition-transform duration-300 z-40",
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           )}
         >
@@ -127,7 +148,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
   }
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-64 bg-black/50 backdrop-blur-lg p-6 shadow-xl">
+    <aside className="fixed left-0 top-0 h-full w-64 bg-black/50 backdrop-blur-lg p-6 shadow-xl hidden md:block">
       {navContent}
     </aside>
   );
