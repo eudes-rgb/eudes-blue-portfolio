@@ -7,6 +7,7 @@ import { Projects } from "@/components/Projects";
 import { Formations } from "@/components/Formations";
 import { Experiences } from "@/components/Experiences";
 import { Navigation } from "@/components/Navigation";
+import { MentionsLegales } from "@/components/MentionsLegales";
 import { useState, useMemo } from "react";
 import { BackgroundCarousel } from "@/components/BackgroundCarousel";
 
@@ -18,7 +19,8 @@ const TABS = {
   FORMATIONS: "formations",
   EXPERIENCES: "experiences",
   PROJETS: "projets",
-  CONTACT: "contact"
+  CONTACT: "contact",
+  MENTIONS_LEGALES: "mentions-legales"
 };
 
 const Index = () => {
@@ -41,6 +43,8 @@ const Index = () => {
         return <Projects />;
       case TABS.CONTACT:
         return <Contact />;
+      case TABS.MENTIONS_LEGALES:
+        return <MentionsLegales />;
       default:
         return <Header />;
     }

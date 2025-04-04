@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Home, User, Book, Mail, Terminal, Menu, X, GraduationCap, Briefcase } from "lucide-react";
+import { Home, User, Book, Mail, Terminal, Menu, X, GraduationCap, Briefcase, FileText } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -19,6 +19,7 @@ const tabs: Tab[] = [
   { id: "experiences", label: "Expériences", icon: Briefcase },
   { id: "projets", label: "Projets", icon: Terminal },
   { id: "contact", label: "Contact", icon: Mail },
+  { id: "mentions-legales", label: "Mentions Légales", icon: FileText },
 ];
 
 interface NavigationProps {
