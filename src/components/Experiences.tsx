@@ -1,7 +1,18 @@
+
 import { Briefcase } from "lucide-react";
 
 export const Experiences = () => {
   const experiences = [
+    {
+      poste: "Agent d'entretien",
+      entreprise: "Self de la Gendarmerie de Châteaulin",
+      periode: "Janvier 2025 (3 week-ends)",
+      responsabilites: [
+        "Maintien de conditions d'hygiène impeccables dans un cadre institutionnel",
+        "Démonstration de ponctualité, rigueur et sens du service",
+        "Travail dans un environnement organisé et strict",
+      ],
+    },
     {
       poste: "Opérateur-Fermeture de Bouchons",
       entreprise: "Sobraga Gabon",
