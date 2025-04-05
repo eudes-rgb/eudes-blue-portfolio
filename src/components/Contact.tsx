@@ -1,13 +1,15 @@
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Mail, Phone, Send, Linkedin, Instagram } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,17 +20,36 @@ export const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!formRef.current) return;
+    
     setIsSubmitting(true);
 
-    // Simuler un délai d'envoi
-    setTimeout(() => {
+    try {
+      // Remplacez ces valeurs par vos identifiants EmailJS
+      // SERVICE_ID, TEMPLATE_ID et PUBLIC_KEY sont à configurer dans votre compte EmailJS
+      await emailjs.sendForm(
+        'SERVICE_ID', 
+        'TEMPLATE_ID',
+        formRef.current,
+        'PUBLIC_KEY'
+      );
+
       toast({
         title: "Message envoyé !",
-        description: "Je vous répondrai dans les plus brefs délais.",
+        description: "Votre message a bien été envoyé à ma boîte mail. Je vous répondrai dans les plus brefs délais.",
       });
       setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Erreur d'envoi:", error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -43,9 +64,10 @@ export const Contact = () => {
       <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
         {/* Formulaire */}
         <div className="bg-[#1A1F2C] p-4 sm:p-6 rounded-lg border border-[#0EA5E9]/20">
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-4">
               <Input
+                name="name"
                 placeholder="Votre nom"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -53,6 +75,7 @@ export const Contact = () => {
                 className="bg-[#222632] border-[#0EA5E9]/20 focus:border-[#0EA5E9]"
               />
               <Input
+                name="email"
                 type="email"
                 placeholder="Votre email"
                 value={formData.email}
@@ -61,6 +84,7 @@ export const Contact = () => {
                 className="bg-[#222632] border-[#0EA5E9]/20 focus:border-[#0EA5E9]"
               />
               <Input
+                name="subject"
                 placeholder="Sujet"
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -68,6 +92,7 @@ export const Contact = () => {
                 className="bg-[#222632] border-[#0EA5E9]/20 focus:border-[#0EA5E9]"
               />
               <Textarea
+                name="message"
                 placeholder="Votre message"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
