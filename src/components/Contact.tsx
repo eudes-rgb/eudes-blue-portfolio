@@ -89,9 +89,6 @@ export const Contact = () => {
       <div className="max-w-4xl mx-auto p-4 sm:p-6">
         <div className="mb-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#0EA5E9] mb-3">Configuration EmailJS</h2>
-          <p className="text-gray-400 mb-4">
-            Pour recevoir les messages du formulaire dans votre boîte mail, veuillez configurer vos identifiants EmailJS.
-          </p>
           <div className="bg-[#1A1F2C] p-5 rounded-lg border border-[#0EA5E9]/20">
             <div className="space-y-4">
               <div>
@@ -278,3 +275,4 @@ export const Contact = () => {
     </div>
   );
 };
+
