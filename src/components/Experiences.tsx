@@ -4,6 +4,19 @@ import { Briefcase } from "lucide-react";
 export const Experiences = () => {
   const experiences = [
     {
+      poste: "Stagiaire - Administration Réseau",
+      entreprise: "Juvénat de Châteaulin",
+      periode: "26 mai - 25 juin 2024",
+      responsabilites: [
+        "État du réseau existant",
+        "Réalisation d'un schéma du réseau filaire et Wi-Fi",
+        "Inventaire des matériels utilisés",
+        "Recensement des appareils connectés",
+        "Analyse des dysfonctionnements",
+        "Propositions d'améliorations et suggestions",
+      ],
+    },
+    {
       poste: "Agent d'entretien",
       entreprise: "Self de la Gendarmerie de Châteaulin",
       periode: "Janvier 2025 (3 week-ends)",
