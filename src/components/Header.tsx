@@ -46,7 +46,7 @@ export const Header = memo(() => {
       </div>
       <div className="flex items-center gap-3 hover:text-[#0EA5E9] transition-colors p-3 rounded-lg hover:bg-[#252A38] backdrop-blur-sm">
         <MapPin className="w-5 h-5 flex-shrink-0" />
-        <span className="text-sm sm:text-base">Châteaulin, France</span>
+        <span className="text-sm sm:text-base">Villeneuve-d'Ascq, France</span>
       </div>
       <div className="flex items-center gap-3 hover:text-[#0EA5E9] transition-colors p-3 rounded-lg hover:bg-[#252A38] backdrop-blur-sm">
         <Calendar className="w-5 h-5 flex-shrink-0" />

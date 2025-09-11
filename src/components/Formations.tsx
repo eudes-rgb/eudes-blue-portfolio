@@ -4,8 +4,8 @@ export const Formations = () => {
   const formations = [
     {
       periode: "2024 - Présent",
-      diplome: "BTS SIO (Service Informatique aux Organisations)",
-      etablissement: "Saint-Louis de Châteaulin",
+      diplome: "DEUST Infrastructures Numériques",
+      etablissement: "Campus Cité Scientifique",
       details: "Formation en cours",
     },
     {

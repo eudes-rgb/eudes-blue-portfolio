@@ -24,7 +24,7 @@ export const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-2">Formation</h3>
               <p className="text-gray-300">
-                Actuellement en BTS SIO (Services Informatiques aux Organisations) option SISR, 
+                Actuellement en DEUST Infrastructures Numériques au campus Cité Scientifique, 
                 je me spécialise dans l'administration des infrastructures et la sécurité des réseaux.
               </p>
             </div>
@@ -37,7 +37,7 @@ export const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-2">Localisation</h3>
               <p className="text-gray-300">
-                Basé à Châteaulin, France
+                Basé à Villeneuve-d'Ascq, France
               </p>
             </div>
           </div>
