@@ -28,12 +28,11 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          hover: "#1E3A8A",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-          hover: "#1F2937",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -55,6 +54,21 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      backgroundImage: {
+        'gradient-professional': 'var(--gradient-primary)',
+        'gradient-card': 'var(--gradient-card)',
+        'gradient-hero': 'var(--gradient-hero)',
+      },
+      boxShadow: {
+        'elegant': 'var(--shadow-elegant)',
+        'card': 'var(--shadow-card)',
+        'glow': 'var(--shadow-glow)',
+      },
+      spacing: {
+        'section': 'var(--spacing-section)',
+        'element': 'var(--spacing-element)',
+        'tight': 'var(--spacing-tight)',
       },
       keyframes: {
         "fade-in": {

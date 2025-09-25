@@ -48,7 +48,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-[#1A1F2C] to-[#111827] dark:from-slate-900 dark:to-slate-950">
+    <div className="min-h-screen relative bg-gradient-hero">
       {/* Background Carousel */}
       <BackgroundCarousel />
       
@@ -56,20 +56,20 @@ const Index = () => {
       <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
       
       {/* Content */}
-      <div className="relative z-10 md:ml-64 flex flex-col min-h-screen">
-        <main className="flex-grow">
-          <div className="container mx-auto py-4 px-4 md:py-8 md:px-8">
-            <div className="bg-[#111827]/60 dark:bg-slate-950/60 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-xl border border-[#1E3A8A]/20 dark:border-blue-900/20">
+      <div className="relative z-10 md:ml-80 flex flex-col min-h-screen">
+        <main className="flex-grow section-padding">
+          <div className="container-professional">
+            <div className="glass-card p-8 lg:p-12 animate-fade-in">
               {renderContent()}
             </div>
           </div>
         </main>
         
         {/* Footer */}
-        <footer className="relative z-10 py-4 px-6 text-center text-white/80 mt-4 backdrop-blur-sm">
-          <div className="flex items-center justify-center gap-2">
+        <footer className="relative z-10 py-6 text-center text-muted-foreground border-t border-border/20 backdrop-blur-sm">
+          <div className="flex items-center justify-center gap-2 text-sm">
             <Copyright className="w-4 h-4" />
-            <span>2025, eudeshermann, Tous droits réservés</span>
+            <span>2025 Eudes-Hermann EKOUANDJA. Tous droits réservés.</span>
           </div>
         </footer>
       </div>

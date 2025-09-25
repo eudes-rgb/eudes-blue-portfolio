@@ -5,13 +5,13 @@ import { useEffect, useState, useCallback, memo } from "react";
 
 export const Header = memo(() => {
   const descriptions = [
-    "Étudiant en BTS SIO passionné par l'administration des systèmes et réseaux.",
-    "À la recherche d'un stage en réseaux informatique pour la période du 26 Mai au 25 Juin 2025.",
+    "Étudiant en DEUST Infrastructures Numériques passionné par l'administration des systèmes et réseaux.",
+    "À la recherche d'opportunités professionnelles pour développer mes compétences techniques.",
   ];
 
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const welcomeText = "Bienvenue sur mon portfolio";
+  const welcomeText = "Bienvenue sur mon portfolio professionnel";
 
   // Optimize the typing effect using useCallback
   const animateText = useCallback(() => {
@@ -19,7 +19,7 @@ export const Header = memo(() => {
       const timeout = setTimeout(() => {
         setDisplayText(prev => prev + welcomeText[currentIndex]);
         setCurrentIndex(prev => prev + 1);
-      }, 100);
+      }, 80);
       
       return timeout;
     }
@@ -35,47 +35,81 @@ export const Header = memo(() => {
 
   // Memoize the contact information section
   const ContactInfo = memo(() => (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-300 max-w-2xl mx-auto">
-      <div className="flex items-center gap-3 hover:text-[#0EA5E9] transition-colors p-3 rounded-lg hover:bg-[#252A38] backdrop-blur-sm">
-        <Mail className="w-5 h-5 flex-shrink-0" />
-        <span className="text-sm sm:text-base truncate">ekouandjaeudes241@gmail.com</span>
-      </div>
-      <div className="flex items-center gap-3 hover:text-[#0EA5E9] transition-colors p-3 rounded-lg hover:bg-[#252A38] backdrop-blur-sm">
-        <Phone className="w-5 h-5 flex-shrink-0" />
-        <span className="text-sm sm:text-base">06 41 03 98 00</span>
-      </div>
-      <div className="flex items-center gap-3 hover:text-[#0EA5E9] transition-colors p-3 rounded-lg hover:bg-[#252A38] backdrop-blur-sm">
-        <MapPin className="w-5 h-5 flex-shrink-0" />
-        <span className="text-sm sm:text-base">Villeneuve-d'Ascq, France</span>
-      </div>
-      <div className="flex items-center gap-3 hover:text-[#0EA5E9] transition-colors p-3 rounded-lg hover:bg-[#252A38] backdrop-blur-sm">
-        <Calendar className="w-5 h-5 flex-shrink-0" />
-        <span className="text-sm sm:text-base">Date de naissance: 26/05/2000</span>
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {[
+        { icon: Mail, text: "ekouandjaeudes241@gmail.com", href: "mailto:ekouandjaeudes241@gmail.com" },
+        { icon: Phone, text: "06 41 03 98 00", href: "tel:+33641039800" },
+        { icon: MapPin, text: "Villeneuve-d'Ascq, France" },
+        { icon: Calendar, text: "Né le 26 mai 2000" }
+      ].map((item, index) => (
+        <div key={index} className="group">
+          {item.href ? (
+            <a 
+              href={item.href} 
+              className="flex items-center gap-4 p-4 rounded-xl bg-card/60 border border-border/50 
+                         transition-all duration-300 hover:bg-card hover:border-primary/50 hover:shadow-glow hover:-translate-y-1"
+            >
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 border border-primary/20 
+                              flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300">
+                <item.icon className="w-5 h-5 text-primary" />
+              </div>
+              <span className="text-card-foreground font-medium">{item.text}</span>
+            </a>
+          ) : (
+            <div className="flex items-center gap-4 p-4 rounded-xl bg-card/60 border border-border/50 
+                            transition-all duration-300 hover:bg-card hover:border-primary/50">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 border border-primary/20 
+                              flex items-center justify-center">
+                <item.icon className="w-5 h-5 text-primary" />
+              </div>
+              <span className="text-card-foreground font-medium">{item.text}</span>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   ));
 
   return (
-    <header className="py-8 sm:py-12 md:py-20 bg-gradient-to-b from-[#111827]/70 to-[#1A1F2C]/50 text-white rounded-lg animate-fade-in">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-4 sm:mb-6 h-10">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-[#0EA5E9] tracking-wide will-change-transform">
-              {displayText}
-              <span className="cursor-blink">|</span>
-            </h2>
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-[#0EA5E9] animate-slide-in will-change-transform">
-            Eudes-Hermann EKOUANDJA
-          </h1>
-          <div className="mb-8 sm:mb-10">
-            <div className="space-y-3 sm:space-y-4 text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
-              {descriptions.map((desc, index) => (
-                <p key={index} className="tracking-wide letter-spacing-wide">{desc}</p>
-              ))}
-            </div>
-          </div>
-          <ContactInfo />
+    <header className="text-center space-y-12 animate-fade-in">
+      {/* Welcome Message */}
+      <div className="space-y-6">
+        <div className="h-12 flex items-center justify-center">
+          <h2 className="text-xl md:text-2xl font-light text-muted-foreground tracking-wide">
+            {displayText}
+            <span className="cursor-blink text-primary">|</span>
+          </h2>
+        </div>
+        
+        {/* Name */}
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gradient animate-slide-up">
+          Eudes-Hermann
+          <br />
+          EKOUANDJA
+        </h1>
+        
+        {/* Descriptions */}
+        <div className="space-y-4 max-w-3xl mx-auto">
+          {descriptions.map((desc, index) => (
+            <p key={index} className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+              {desc}
+            </p>
+          ))}
+        </div>
+      </div>
+
+      {/* Contact Information */}
+      <div className="animate-scale-in">
+        <h3 className="text-xl font-semibold text-foreground mb-8">Informations de contact</h3>
+        <ContactInfo />
+      </div>
+
+      {/* Call to Action */}
+      <div className="pt-8 animate-fade-in">
+        <div className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-professional text-primary-foreground 
+                        rounded-xl font-semibold text-lg shadow-glow hover:shadow-elegant hover:scale-105 
+                        transition-all duration-300 cursor-pointer">
+          <span>Découvrir mon parcours</span>
         </div>
       </div>
     </header>
