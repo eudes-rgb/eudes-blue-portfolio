@@ -7,9 +7,18 @@ export const Formations = () => {
       diplome: "DEUST Infrastructures Numériques",
       etablissement: "Campus Cité Scientifique",
       lieu: "Villeneuve-d'Ascq",
-      details: "Formation spécialisée en administration système et réseaux, cybersécurité",
+      details: "Formation de techniciens en installation, administration et maintenance de réseaux cuivre et fibre optique, sans négliger les liaisons sans fil",
       niveau: "Bac+2",
       statut: "En cours"
+    },
+    {
+      periode: "2024",
+      diplome: "BTS Services Informatiques aux Organisations (SIO)",
+      etablissement: "Saint-Louis de Châteaulin",
+      lieu: "Châteaulin",
+      details: "Formation en services informatiques et développement d'applications",
+      niveau: "Bac+2",
+      statut: "Validé"
     },
     {
       periode: "2022 - 2024",
@@ -22,12 +31,11 @@ export const Formations = () => {
     },
     {
       periode: "2021 - 2022",
-      diplome: "Baccalauréat Scientifique",
+      diplome: "Baccalauréat Lettres et Mathématiques",
       etablissement: "Lycée Privé Awassi",
       lieu: "Gabon",
-      details: "Spécialité Sciences et Technologies",
-      niveau: "Bac",
-      statut: "Obtenu"
+      details: "Spécialité Lettres et Mathématiques",
+      niveau: "Bac"
     },
   ];
 
@@ -55,15 +63,17 @@ export const Formations = () => {
                                group-hover:scale-110 transition-all duration-500">
                   <GraduationCap className="w-8 h-8 text-primary" />
                 </div>
-                <div className="text-center">
-                  <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
-                    ${formation.statut === 'En cours' 
-                      ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20' 
-                      : 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20'
-                    }`}>
-                    {formation.statut}
-                  </span>
-                </div>
+                {formation.statut && (
+                  <div className="text-center">
+                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
+                      ${formation.statut === 'En cours' 
+                        ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20' 
+                        : 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20'
+                      }`}>
+                      {formation.statut}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Content */}
