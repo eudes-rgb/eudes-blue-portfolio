@@ -15,6 +15,17 @@ export const Projects = () => {
       pdfUrl: "https://www.canva.com/design/DAG66ngB390/A-HepelHEd6s6nr9MlOEVA/view"
     },
     {
+      title: "Câblage de l'infrastructure",
+      description: "Documentation technique sur le câblage d'une infrastructure réseau",
+      details: [
+        "Connexion physique et numérique au switch",
+        "Configuration des équipements réseau",
+        "Installation et raccordement des câbles",
+        "Documentation des procédures de câblage"
+      ],
+      pdfUrl: "https://www.canva.com/design/DAG663SktvI/XLa3K6nShwNxSVsV70PZoQ/view"
+    },
+    {
       title: "Installation d'Ubuntu",
       description: "Configuration et installation complète d'Ubuntu sur mon PC personnel",
       details: [
