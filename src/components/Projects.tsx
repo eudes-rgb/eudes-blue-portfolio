@@ -4,6 +4,17 @@ import { Button } from "./ui/button";
 export const Projects = () => {
   const projects = [
     {
+      title: "Configuration des VLANs",
+      description: "Documentation technique sur la création et la configuration des VLANs pour segmenter un réseau",
+      details: [
+        "Création et gestion des VLANs",
+        "Configuration des ports de switch",
+        "Segmentation du trafic réseau",
+        "Documentation des bonnes pratiques"
+      ],
+      pdfUrl: "https://www.canva.com/design/DAG66ngB390/A-HepelHEd6s6nr9MlOEVA/view"
+    },
+    {
       title: "Installation d'Ubuntu",
       description: "Configuration et installation complète d'Ubuntu sur mon PC personnel",
       details: [
@@ -14,7 +25,6 @@ export const Projects = () => {
       ],
       pdfUrl: "https://gamma.app/docs/Installation-dUbuntu-sur-VirtualBox-q3zhivgfaggua7d"
     }
-    // Add more projects here
   ];
 
   const socialLinks = [
