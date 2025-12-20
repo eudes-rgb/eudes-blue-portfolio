@@ -4,6 +4,17 @@ import { Button } from "./ui/button";
 export const Projects = () => {
   const projects = [
     {
+      title: "Rapport de Stage",
+      description: "Rapport de stage détaillant mon expérience en tant que stagiaire administrateur réseaux",
+      details: [
+        "Présentation de l'entreprise et du contexte",
+        "Missions et responsabilités effectuées",
+        "Compétences techniques acquises",
+        "Analyse et bilan du stage"
+      ],
+      pdfUrl: "https://www.canva.com/design/DAGrXDBLxnY/yBSCnve92zKxS6CpK9ILaw/view"
+    },
+    {
       title: "Configuration des VLANs",
       description: "Documentation technique sur la création et la configuration des VLANs pour segmenter un réseau",
       details: [
