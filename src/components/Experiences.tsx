@@ -4,21 +4,36 @@ import { Briefcase, Calendar, MapPin, CheckCircle, Users, Target } from "lucide-
 export const Experiences = () => {
   const experiences = [
     {
-      poste: "Stagiaire - Administration Réseau",
-      entreprise: "Juvénat de Châteaulin",
-      periode: "26 mai - 25 juin 2024",
+      poste: "Stagiaire Administrateur Réseaux",
+      entreprise: "Juvénat Notre-Dame",
+      periode: "Mai 2025 - Juin 2025",
       lieu: "Châteaulin, France",
       type: "Stage professionnel",
       responsabilites: [
-        "État du réseau existant",
-        "Réalisation d'un schéma du réseau filaire et Wi-Fi",
-        "Inventaire des matériels utilisés",
-        "Recensement des appareils connectés",
-        "Analyse des dysfonctionnements",
-        "Propositions d'améliorations et suggestions",
+        "Diagnostic complet du réseau filaire et WiFi",
+        "Refonte du schéma réseau : ajout de prises RJ45, création de VLAN clients",
+        "Mise en place d'un code d'accès clients + segmentation réseau",
+        "Proposition d'un nouveau plan d'adressage IP",
+        "Utilisation de Cisco Packet Tracer pour simulation avant déploiement",
       ],
-      competences: ["Administration réseau", "Diagnostic technique", "Documentation"],
+      competences: ["Administration réseau", "Cisco Packet Tracer", "VLAN", "Adressage IP"],
       couleur: "primary"
+    },
+    {
+      poste: "Projet BTS – Mise en place d'une infrastructure réseau complète",
+      entreprise: "Lycée Saint-Louis",
+      periode: "Février 2024 - Avril 2025",
+      lieu: "Châteaulin, France",
+      type: "Projet académique",
+      responsabilites: [
+        "Création et segmentation d'un réseau en 4 VLAN",
+        "Déploiement des trunks et du routage dynamique",
+        "Déploiement d'un contrôleur de domaine Windows Server 2019",
+        "Mise en place AD DS, DNS, DHCP, partages réseaux",
+        "Stratégie de sauvegarde des données",
+      ],
+      competences: ["Windows Server", "Active Directory", "DNS", "DHCP", "VLAN"],
+      couleur: "secondary"
     },
     {
       poste: "Agent d'entretien",
@@ -32,7 +47,7 @@ export const Experiences = () => {
         "Travail dans un environnement organisé et strict",
       ],
       competences: ["Rigueur", "Sens du service", "Respect des protocoles"],
-      couleur: "secondary"
+      couleur: "accent"
     },
     {
       poste: "Opérateur-Fermeture de Bouchons",
@@ -46,7 +61,7 @@ export const Experiences = () => {
         "Maintenance préventive des équipements",
       ],
       competences: ["Travail en équipe", "Contrôle qualité", "Production industrielle"],
-      couleur: "accent"
+      couleur: "primary"
     },
     {
       poste: "Chef de projets",
@@ -60,7 +75,7 @@ export const Experiences = () => {
         "Organisation d'événements",
       ],
       competences: ["Leadership", "Gestion de projet", "Organisation"],
-      couleur: "primary"
+      couleur: "secondary"
     },
   ];
 
@@ -182,15 +197,15 @@ export const Experiences = () => {
       {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
         <div className="text-center glass-card p-6 hover-lift">
-          <div className="text-3xl font-bold text-primary mb-2">4</div>
+          <div className="text-3xl font-bold text-primary mb-2">5</div>
           <p className="text-muted-foreground">Expériences diverses</p>
         </div>
         <div className="text-center glass-card p-6 hover-lift">
-          <div className="text-3xl font-bold text-primary mb-2">2+</div>
+          <div className="text-3xl font-bold text-primary mb-2">3+</div>
           <p className="text-muted-foreground">Années d'expérience</p>
         </div>
         <div className="text-center glass-card p-6 hover-lift">
-          <div className="text-3xl font-bold text-primary mb-2">15+</div>
+          <div className="text-3xl font-bold text-primary mb-2">20+</div>
           <p className="text-muted-foreground">Compétences acquises</p>
         </div>
       </div>

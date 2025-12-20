@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { Mail, Phone, Send, Linkedin, Instagram } from "lucide-react";
+import { Mail, Phone, Send, Linkedin, Instagram, MapPin } from "lucide-react";
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -108,11 +108,15 @@ export const Contact = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#0EA5E9] flex-shrink-0" />
-                <p className="text-sm sm:text-base truncate">ekouandja-eh@saint-louis29.net</p>
+                <p className="text-sm sm:text-base truncate">ekouandjaeudes241@gmail.com</p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#0EA5E9] flex-shrink-0" />
                 <p className="text-sm sm:text-base">06 41 03 98 00</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-[#0EA5E9] flex-shrink-0" />
+                <p className="text-sm sm:text-base">5 Chemin des Vieux Arbres, Villeneuve-d'Ascq (59650)</p>
               </div>
             </div>
           </div>
@@ -121,7 +125,7 @@ export const Contact = () => {
             <h4 className="text-base sm:text-lg font-semibold mb-4">Mes réseaux sociaux</h4>
             <div className="flex gap-4">
               <a
-                href="https://www.linkedin.com/in/eudes-hermann-ekouandja-94a796338"
+                href="https://www.linkedin.com/in/Eudes-Hermann%20EKOUANDJA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-[#222632] rounded-lg hover:bg-[#0EA5E9]/10 transition-colors"
@@ -143,7 +147,7 @@ export const Contact = () => {
             <Button 
               variant="outline" 
               className="w-full border-[#0EA5E9]/20 hover:bg-[#0EA5E9]/10"
-              onClick={() => window.open('https://cvdesignr.com/p/9LokwK4kLppdo1b', '_blank')}
+              onClick={() => window.open('https://cvdesignr.com/p/4jyzR85MBZQByOw', '_blank')}
             >
               Télécharger mon CV
             </Button>
