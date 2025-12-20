@@ -5,8 +5,8 @@ import { useEffect, useState, useCallback, memo } from "react";
 
 export const Header = memo(() => {
   const descriptions = [
-    "Étudiant en DEUST Infrastructures Numériques passionné par l'administration des systèmes et réseaux.",
-    "À la recherche d'opportunités professionnelles pour développer mes compétences techniques.",
+    "Étudiant en DEUST Infrastructures Numériques à l'Université de Lille, je recherche un stage de 6 semaines (mai–juin 2026) en administration systèmes et réseaux afin de mettre en pratique mes compétences.",
+    "Passionné par l'administration des systèmes et réseaux.",
   ];
 
   const [displayText, setDisplayText] = useState("");
@@ -39,7 +39,7 @@ export const Header = memo(() => {
       {[
         { icon: Mail, text: "ekouandjaeudes241@gmail.com", href: "mailto:ekouandjaeudes241@gmail.com" },
         { icon: Phone, text: "06 41 03 98 00", href: "tel:+33641039800" },
-        { icon: MapPin, text: "Villeneuve-d'Ascq, France" },
+        { icon: MapPin, text: "5 Chemin des Vieux Arbres, Villeneuve-d'Ascq (59650)" },
         { icon: Calendar, text: "Né le 26 mai 2000" }
       ].map((item, index) => (
         <div key={index} className="group">
@@ -87,6 +87,11 @@ export const Header = memo(() => {
           <br />
           EKOUANDJA
         </h1>
+
+        {/* Title */}
+        <p className="text-xl md:text-2xl text-primary font-semibold">
+          Stagiaire Technicien Systèmes & Réseaux (Mai–Juin 2026)
+        </p>
         
         {/* Descriptions */}
         <div className="space-y-4 max-w-3xl mx-auto">

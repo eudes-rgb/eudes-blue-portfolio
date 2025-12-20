@@ -1,4 +1,4 @@
-import { Book, Trophy } from "lucide-react";
+import { Book, Trophy, Newspaper } from "lucide-react";
 
 export const Interets = () => {
   const interets = [
@@ -8,9 +8,9 @@ export const Interets = () => {
       items: ["Football", "Basketball"],
     },
     {
-      categorie: "Lecture",
-      icon: <Book className="w-8 h-8" />,
-      items: ["Romans", "L'union de la presse nationale"],
+      categorie: "Actualités & Lecture",
+      icon: <Newspaper className="w-8 h-8" />,
+      items: ["Presse nationale / numérique", "L'union de la presse nationale"],
     },
   ];
 

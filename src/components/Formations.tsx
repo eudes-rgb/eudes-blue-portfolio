@@ -3,38 +3,38 @@ import { GraduationCap, Calendar, MapPin } from "lucide-react";
 export const Formations = () => {
   const formations = [
     {
-      periode: "2024 - Présent",
+      periode: "Depuis septembre 2025",
       diplome: "DEUST Infrastructures Numériques",
-      etablissement: "Campus Cité Scientifique",
-      lieu: "Villeneuve-d'Ascq",
+      etablissement: "Université de Lille",
+      lieu: "Cité Scientifique, Villeneuve-d'Ascq",
       details: "Formation de techniciens en installation, administration et maintenance de réseaux cuivre et fibre optique, sans négliger les liaisons sans fil",
       niveau: "Bac+2",
       statut: "En cours"
     },
     {
-      periode: "2024",
+      periode: "Septembre 2024 - Août 2025",
       diplome: "BTS Services Informatiques aux Organisations (SIO)",
       etablissement: "Saint-Louis de Châteaulin",
-      lieu: "Châteaulin",
+      lieu: "Châteaulin, France",
       details: "Formation en services informatiques et développement d'applications",
+      niveau: "Bac+2",
+      statut: "En cours"
+    },
+    {
+      periode: "Octobre 2022 - Août 2024",
+      diplome: "Licence 2 Monétique et Sécurité des Systèmes",
+      etablissement: "École Communautaire de Montélique D'Afrique Centrale",
+      lieu: "Libreville, Gabon",
+      details: "Spécialisation en systèmes de paiement électronique et sécurité informatique",
       niveau: "Bac+2",
       statut: "Validé"
     },
     {
-      periode: "2022 - 2024",
-      diplome: "Licence Monétique et Sécurité des Systèmes",
-      etablissement: "École Communautaire de Monétique d'Afrique Centrale",
+      periode: "Janvier 2021 - Juillet 2022",
+      diplome: "Baccalauréat",
+      etablissement: "Lycée Privée Awassi",
       lieu: "Libreville, Gabon",
-      details: "Spécialisation en systèmes de paiement électronique et sécurité informatique",
-      niveau: "Bac+3",
-      statut: "Validé"
-    },
-    {
-      periode: "2021 - 2022",
-      diplome: "Baccalauréat Lettres et Mathématiques",
-      etablissement: "Lycée Privé Awassi",
-      lieu: "Gabon",
-      details: "Spécialité Lettres et Mathématiques",
+      details: "Baccalauréat général",
       niveau: "Bac"
     },
   ];
