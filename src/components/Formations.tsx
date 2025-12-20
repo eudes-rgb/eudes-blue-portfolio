@@ -18,7 +18,7 @@ export const Formations = () => {
       lieu: "Châteaulin, France",
       details: "Formation en services informatiques et développement d'applications",
       niveau: "Bac+2",
-      statut: "En cours"
+      statut: "Validé"
     },
     {
       periode: "Octobre 2022 - Août 2024",
