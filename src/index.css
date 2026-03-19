@@ -5,27 +5,27 @@
  
 @layer base {
   :root {
-    /* Professional color palette */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 6%;
-    --card-foreground: 0 0% 95%;
-    --popover: 240 10% 6%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 210 100% 56%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 210 100% 65%;
-    --secondary: 240 5% 15%;
-    --secondary-foreground: 0 0% 90%;
-    --muted: 240 5% 12%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 210 100% 56%;
-    --accent-foreground: 0 0% 98%;
+    /* Rouge Bordeaux & Crème - Palette professionnelle */
+    --background: 0 15% 5%;
+    --foreground: 30 20% 95%;
+    --card: 0 12% 9%;
+    --card-foreground: 30 15% 92%;
+    --popover: 0 12% 9%;
+    --popover-foreground: 30 15% 92%;
+    --primary: 350 65% 45%;
+    --primary-foreground: 30 20% 97%;
+    --primary-glow: 350 70% 55%;
+    --secondary: 0 8% 14%;
+    --secondary-foreground: 30 15% 88%;
+    --muted: 0 8% 12%;
+    --muted-foreground: 20 10% 60%;
+    --accent: 350 65% 45%;
+    --accent-foreground: 30 20% 97%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5% 18%;
-    --input: 240 5% 15%;
-    --ring: 210 100% 56%;
+    --border: 0 8% 18%;
+    --input: 0 8% 15%;
+    --ring: 350 65% 45%;
     --radius: 0.75rem;
 
     /* Professional gradients */
@@ -34,9 +34,9 @@
     --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
     
     /* Professional shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.1);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.15);
     --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.2);
     
     /* Typography scales */
     --font-size-xs: 0.75rem;
@@ -59,27 +59,27 @@
   }
  
   .dark {
-    /* Enhanced dark mode */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 8% 8%;
-    --card-foreground: 0 0% 95%;
-    --popover: 240 8% 8%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 210 100% 56%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 210 100% 65%;
-    --secondary: 240 5% 15%;
-    --secondary-foreground: 0 0% 90%;
-    --muted: 240 5% 12%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 210 100% 56%;
-    --accent-foreground: 0 0% 98%;
+    /* Enhanced dark mode - Bordeaux & Crème */
+    --background: 0 15% 5%;
+    --foreground: 30 20% 95%;
+    --card: 0 10% 8%;
+    --card-foreground: 30 15% 92%;
+    --popover: 0 10% 8%;
+    --popover-foreground: 30 15% 92%;
+    --primary: 350 65% 45%;
+    --primary-foreground: 30 20% 97%;
+    --primary-glow: 350 70% 55%;
+    --secondary: 0 8% 14%;
+    --secondary-foreground: 30 15% 88%;
+    --muted: 0 8% 12%;
+    --muted-foreground: 20 10% 60%;
+    --accent: 350 65% 45%;
+    --accent-foreground: 30 20% 97%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5% 18%;
-    --input: 240 5% 15%;
-    --ring: 210 100% 56%;
+    --border: 0 8% 18%;
+    --input: 0 8% 15%;
+    --ring: 350 65% 45%;
   }
 
   * {
