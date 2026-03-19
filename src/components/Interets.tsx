@@ -10,7 +10,12 @@ export const Interets = () => {
     {
       categorie: "Actualités & Lecture",
       icon: <Newspaper className="w-8 h-8" />,
-      items: ["Presse nationale / numérique", "L'union de la presse nationale"],
+      items: ["Presse nationale et numérique"],
+    },
+    {
+      categorie: "Numérique",
+      icon: <Book className="w-8 h-8" />,
+      items: ["Réseaux sociaux et veille technologique"],
     },
   ];
 

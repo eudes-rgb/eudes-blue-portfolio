@@ -43,10 +43,11 @@ const skills = [
     category: "Langages de programmation",
     icon: <Code className="w-8 h-8" />,
     items: [
-      { name: "PHP", icon: <FileCode className="w-4 h-4" /> },
       { name: "Python", icon: <FileCode className="w-4 h-4" /> },
-      { name: "Javascript", icon: <FileCode className="w-4 h-4" /> },
-      { name: "C#", icon: <FileCode className="w-4 h-4" /> },
+      { name: "Bash", icon: <FileCode className="w-4 h-4" /> },
+      { name: "C", icon: <FileCode className="w-4 h-4" /> },
+      { name: "PHP", icon: <FileCode className="w-4 h-4" /> },
+      { name: "SQL", icon: <FileCode className="w-4 h-4" /> },
     ],
   },
   {

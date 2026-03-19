@@ -177,6 +177,25 @@ export const Experiences = () => {
                   </div>
                 </div>
 
+                {/* Accomplishments */}
+                {experience.accomplissements && experience.accomplissements.length > 0 && (
+                  <div className="space-y-4">
+                    <h4 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                      <Award className="w-5 h-5 text-emerald-400" />
+                      Accomplissements
+                    </h4>
+                    <div className="grid gap-3">
+                      {experience.accomplissements.map((acc, idx) => (
+                        <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-emerald-400/10 border border-emerald-400/20
+                                               hover:bg-emerald-400/15 transition-all duration-300">
+                          <Award className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-card-foreground leading-relaxed">{acc}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* Skills */}
                 <div className="space-y-3">
                   <h4 className="text-lg font-semibold text-foreground flex items-center gap-2">
