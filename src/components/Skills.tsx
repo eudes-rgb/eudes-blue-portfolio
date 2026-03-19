@@ -23,9 +23,9 @@ const skills = [
     category: "Administration Système",
     icon: <Server className="w-8 h-8" />,
     items: [
-      { name: "Windows Server (AD DS, DNS, DHCP)", icon: <Monitor className="w-4 h-4" /> },
-      { name: "Dépannage postes informatiques", icon: <Laptop className="w-4 h-4" /> },
-      { name: "Installation Windows", icon: <Settings className="w-4 h-4" /> },
+      { name: "Administration Active Directory : utilisateurs, groupes, GPO", icon: <Monitor className="w-4 h-4" /> },
+      { name: "Mise en place DNS, DHCP et partages réseau", icon: <Server className="w-4 h-4" /> },
+      { name: "Installation et maintenance systèmes et équipements IT", icon: <Laptop className="w-4 h-4" /> },
       { name: "Sécurisation des environnements", icon: <Shield className="w-4 h-4" /> },
     ],
   },
