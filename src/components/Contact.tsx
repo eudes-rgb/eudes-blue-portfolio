@@ -147,7 +147,7 @@ export const Contact = () => {
             <Button 
               variant="outline" 
               className="w-full border-[#0EA5E9]/20 hover:bg-[#0EA5E9]/10"
-              onClick={() => window.open('https://cvdesignr.com/p/4jyzR85MBZQByOw', '_blank')}
+              onClick={() => window.open('/CV_STAGE_EUDES-HERMANN-2.pdf', '_blank')}
             >
               Télécharger mon CV
             </Button>
