@@ -17,7 +17,7 @@ export const Formations = () => {
       etablissement: "Saint-Louis de Châteaulin",
       lieu: "Châteaulin, France",
       details: "Formation en services informatiques et développement d'applications",
-      niveau: "Bac+2",
+      niveau: "Bac+1",
       statut: "Validé"
     },
     {
