@@ -90,7 +90,7 @@ export const Header = memo(() => {
 
         {/* Title */}
         <p className="text-xl md:text-2xl text-primary font-semibold">
-          Stagiaire Technicien Systèmes & Réseaux (Mai–Juin 2026)
+          Stagiaire Systèmes & Réseaux (Mai–Août 2026) | Alternance dès Septembre
         </p>
         
         {/* Descriptions */}
