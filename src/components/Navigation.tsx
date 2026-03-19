@@ -116,11 +116,11 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
         </div>
         <div className="space-y-2 text-sm">
           <a 
-            href="mailto:ekouandja-eh@saint-louis29.net" 
+            href="mailto:eudes-hermann.ekouandja.etu@univ-lille.fr" 
             className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
             <Mail className="w-4 h-4 flex-shrink-0" />
-            <span className="truncate">ekouandja-eh@saint-louis29.net</span>
+            <span className="truncate">eudes-hermann.ekouandja.etu@univ-lille.fr</span>
           </a>
           <a 
             href="tel:+33641039800" 
