@@ -1,5 +1,5 @@
 
-import { Briefcase, Calendar, MapPin, CheckCircle, Users, Target } from "lucide-react";
+import { Briefcase, Calendar, MapPin, CheckCircle, Users, Target, Award } from "lucide-react";
 
 export const Experiences = () => {
   const experiences = [
