@@ -5,8 +5,8 @@ import { useEffect, useState, useCallback, memo } from "react";
 
 export const Header = memo(() => {
   const descriptions = [
-    "Étudiant en DEUST Infrastructures Numériques à l'Université de Lille, je recherche un stage de 6 semaines (mai–juin 2026) en administration systèmes et réseaux afin de mettre en pratique mes compétences.",
-    "Passionné par l'administration des systèmes et réseaux.",
+    "Étudiant en DEUST Infrastructures Numériques à l'Université de Lille, je suis à la recherche d'un stage en systèmes et réseaux de mai à août 2026, avec poursuite en alternance dès septembre.",
+    "Rigoureux et motivé, je souhaite mettre en pratique mes compétences en administration réseau, support utilisateur, et gestion d'infrastructures IT.",
   ];
 
   const [displayText, setDisplayText] = useState("");
@@ -37,7 +37,7 @@ export const Header = memo(() => {
   const ContactInfo = memo(() => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
       {[
-        { icon: Mail, text: "ekouandjaeudes241@gmail.com", href: "mailto:ekouandjaeudes241@gmail.com" },
+        { icon: Mail, text: "eudes-hermann.ekouandja.etu@univ-lille.fr", href: "mailto:eudes-hermann.ekouandja.etu@univ-lille.fr" },
         { icon: Phone, text: "06 41 03 98 00", href: "tel:+33641039800" },
         { icon: MapPin, text: "5 Chemin des Vieux Arbres, Villeneuve-d'Ascq (59650)" },
         { icon: Calendar, text: "Né le 26 mai 2000" }
@@ -90,7 +90,7 @@ export const Header = memo(() => {
 
         {/* Title */}
         <p className="text-xl md:text-2xl text-primary font-semibold">
-          Stagiaire Technicien Systèmes & Réseaux (Mai–Juin 2026)
+          Stagiaire Systèmes & Réseaux (Mai–Août 2026) | Alternance dès Septembre
         </p>
         
         {/* Descriptions */}

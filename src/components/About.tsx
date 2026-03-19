@@ -2,8 +2,9 @@ import { User, GraduationCap, MapPin, Target } from "lucide-react";
 
 export const About = () => {
   const atouts = [
-    "Sens du contact, autonomie, esprit d'équipe",
-    "Bonne capacité d'adaptation, envie d'apprendre"
+    "Capacité d'adaptation rapide et autonomie",
+    "Esprit d'équipe et sens du contact",
+    "Motivation pour apprendre et relever des défis techniques"
   ];
 
   return (
@@ -17,7 +18,7 @@ export const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-2">Qui suis-je ?</h3>
               <p className="text-gray-300">
-                Étudiant en DEUST Infrastructures Numériques à l'Université de Lille, je recherche un stage de 6 semaines (mai–juin 2026) en administration systèmes et réseaux afin de mettre en pratique mes compétences.
+                Étudiant en DEUST Infrastructures Numériques à l'Université de Lille, je suis à la recherche d'un stage en systèmes et réseaux de mai à août 2026, avec poursuite en alternance dès septembre. Rigoureux et motivé, je souhaite mettre en pratique mes compétences en administration réseau, support utilisateur, et gestion d'infrastructures IT, tout en développant une expertise professionnelle dans des environnements techniques exigeants.
               </p>
             </div>
           </div>

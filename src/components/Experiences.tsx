@@ -1,36 +1,41 @@
 
-import { Briefcase, Calendar, MapPin, CheckCircle, Users, Target } from "lucide-react";
+import { Briefcase, Calendar, MapPin, CheckCircle, Users, Target, Award } from "lucide-react";
 
 export const Experiences = () => {
   const experiences = [
     {
       poste: "Stagiaire Administrateur Réseaux",
-      entreprise: "Juvénat Notre-Dame",
-      periode: "Mai 2025 - Juin 2025",
+      entreprise: "Juventin Notre-Dame",
+      periode: "Mai 2025 - Juillet 2025",
       lieu: "Châteaulin, France",
       type: "Stage professionnel",
       responsabilites: [
-        "Diagnostic complet du réseau filaire et WiFi",
-        "Refonte du schéma réseau : ajout de prises RJ45, création de VLAN clients",
-        "Mise en place d'un code d'accès clients + segmentation réseau",
-        "Proposition d'un nouveau plan d'adressage IP",
-        "Utilisation de Cisco Packet Tracer pour simulation avant déploiement",
+        "Diagnostic complet et optimisation du réseau filaire et Wi-Fi",
+        "Refonte du schéma réseau avec ajout de VLAN et nouvelles prises RJ45",
+        "Mise en place de codes d'accès clients et segmentation sécurisée",
+        "Simulation de déploiement via Cisco Packet Tracer",
+      ],
+      accomplissements: [
+        "Amélioration de la performance réseau, réduisant les interruptions de service de 70 %",
+        "Mise en place d'un plan d'adressage IP optimisé pour 50+ postes",
       ],
       competences: ["Administration réseau", "Cisco Packet Tracer", "VLAN", "Adressage IP"],
       couleur: "primary"
     },
     {
-      poste: "Projet BTS – Mise en place d'une infrastructure réseau complète",
+      poste: "Projet BTS – Infrastructure réseau complète",
       entreprise: "Lycée Saint-Louis",
-      periode: "Février 2024 - Avril 2025",
+      periode: "Février 2024 - Avril 2024",
       lieu: "Châteaulin, France",
       type: "Projet académique",
       responsabilites: [
-        "Création et segmentation d'un réseau en 4 VLAN",
-        "Déploiement des trunks et du routage dynamique",
-        "Déploiement d'un contrôleur de domaine Windows Server 2019",
-        "Mise en place AD DS, DNS, DHCP, partages réseaux",
-        "Stratégie de sauvegarde des données",
+        "Conception et déploiement d'un réseau segmenté en 4 VLAN avec routage dynamique",
+        "Configuration d'un contrôleur de domaine Windows Server 2019 (ADS, DNS, DHCP)",
+        "Mise en place d'une stratégie de sauvegarde et partage réseau",
+      ],
+      accomplissements: [
+        "Déploiement opérationnel d'un réseau simulé pour plus de 100 postes",
+        "Implémentation d'un système de sauvegarde automatisé sécurisé",
       ],
       competences: ["Windows Server", "Active Directory", "DNS", "DHCP", "VLAN"],
       couleur: "secondary"
@@ -171,6 +176,25 @@ export const Experiences = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* Accomplishments */}
+                {experience.accomplissements && experience.accomplissements.length > 0 && (
+                  <div className="space-y-4">
+                    <h4 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                      <Award className="w-5 h-5 text-emerald-400" />
+                      Accomplissements
+                    </h4>
+                    <div className="grid gap-3">
+                      {experience.accomplissements.map((acc, idx) => (
+                        <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-emerald-400/10 border border-emerald-400/20
+                                               hover:bg-emerald-400/15 transition-all duration-300">
+                          <Award className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-card-foreground leading-relaxed">{acc}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Skills */}
                 <div className="space-y-3">
