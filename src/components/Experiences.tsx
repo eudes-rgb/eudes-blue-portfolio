@@ -23,17 +23,19 @@ export const Experiences = () => {
       couleur: "primary"
     },
     {
-      poste: "Projet BTS – Mise en place d'une infrastructure réseau complète",
+      poste: "Projet BTS – Infrastructure réseau complète",
       entreprise: "Lycée Saint-Louis",
-      periode: "Février 2024 - Avril 2025",
+      periode: "Février 2024 - Avril 2024",
       lieu: "Châteaulin, France",
       type: "Projet académique",
       responsabilites: [
-        "Création et segmentation d'un réseau en 4 VLAN",
-        "Déploiement des trunks et du routage dynamique",
-        "Déploiement d'un contrôleur de domaine Windows Server 2019",
-        "Mise en place AD DS, DNS, DHCP, partages réseaux",
-        "Stratégie de sauvegarde des données",
+        "Conception et déploiement d'un réseau segmenté en 4 VLAN avec routage dynamique",
+        "Configuration d'un contrôleur de domaine Windows Server 2019 (ADS, DNS, DHCP)",
+        "Mise en place d'une stratégie de sauvegarde et partage réseau",
+      ],
+      accomplissements: [
+        "Déploiement opérationnel d'un réseau simulé pour plus de 100 postes",
+        "Implémentation d'un système de sauvegarde automatisé sécurisé",
       ],
       competences: ["Windows Server", "Active Directory", "DNS", "DHCP", "VLAN"],
       couleur: "secondary"
