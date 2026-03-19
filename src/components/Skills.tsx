@@ -34,8 +34,8 @@ const skills = [
     icon: <Laptop className="w-8 h-8" />,
     items: [
       { name: "Cisco Packet Tracer", icon: <Network className="w-4 h-4" /> },
-      { name: "VirtualBox", icon: <Server className="w-4 h-4" /> },
-      { name: "PuTTY", icon: <Terminal className="w-4 h-4" /> },
+      { name: "VirtualBox / VMware (notions Hyper-V)", icon: <Server className="w-4 h-4" /> },
+      { name: "PuTTY / Minicom", icon: <Terminal className="w-4 h-4" /> },
       { name: "VS Code", icon: <Code className="w-4 h-4" /> },
     ],
   },
