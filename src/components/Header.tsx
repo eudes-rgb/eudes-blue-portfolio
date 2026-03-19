@@ -37,7 +37,7 @@ export const Header = memo(() => {
   const ContactInfo = memo(() => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
       {[
-        { icon: Mail, text: "ekouandjaeudes241@gmail.com", href: "mailto:ekouandjaeudes241@gmail.com" },
+        { icon: Mail, text: "eudes-hermann.ekouandja.etu@univ-lille.fr", href: "mailto:eudes-hermann.ekouandja.etu@univ-lille.fr" },
         { icon: Phone, text: "06 41 03 98 00", href: "tel:+33641039800" },
         { icon: MapPin, text: "5 Chemin des Vieux Arbres, Villeneuve-d'Ascq (59650)" },
         { icon: Calendar, text: "Né le 26 mai 2000" }

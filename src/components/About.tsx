@@ -2,8 +2,9 @@ import { User, GraduationCap, MapPin, Target } from "lucide-react";
 
 export const About = () => {
   const atouts = [
-    "Sens du contact, autonomie, esprit d'équipe",
-    "Bonne capacité d'adaptation, envie d'apprendre"
+    "Capacité d'adaptation rapide et autonomie",
+    "Esprit d'équipe et sens du contact",
+    "Motivation pour apprendre et relever des défis techniques"
   ];
 
   return (
