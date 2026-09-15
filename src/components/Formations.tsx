@@ -12,15 +12,6 @@ export const Formations = () => {
       statut: "En cours"
     },
     {
-      periode: "Septembre 2024 - Août 2025",
-      diplome: "BTS Services Informatiques aux Organisations (SIO)",
-      etablissement: "Saint-Louis de Châteaulin",
-      lieu: "Châteaulin, France",
-      details: "Formation en services informatiques et développement d'applications",
-      niveau: "Bac+1",
-      statut: "Validé"
-    },
-    {
       periode: "Octobre 2022 - Août 2024",
       diplome: "Licence 2 Monétique et Sécurité des Systèmes",
       etablissement: "École Communautaire de Montélique D'Afrique Centrale",
