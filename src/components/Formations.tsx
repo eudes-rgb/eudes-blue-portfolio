@@ -21,7 +21,7 @@ export const Formations = () => {
       statut: "Validé"
     },
     {
-      periode: "Janvier 2021 - Juillet 2022",
+      periode: "Session 2022 - 2023",
       diplome: "Baccalauréat",
       etablissement: "Lycée Privée Awassi",
       lieu: "Libreville, Gabon",
