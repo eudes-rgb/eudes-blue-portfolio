@@ -24,6 +24,9 @@ const TABS = {
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState(TABS.ACCUEIL);
+  const [isNavOpen, setIsNavOpen] = useState(true);
+  
+
   
   // Optimize rendering by memoizing the content based on the active tab
   const renderContent = () => {
@@ -53,10 +56,16 @@ const Index = () => {
       <BackgroundCarousel />
       
       {/* Navigation */}
-      <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
+      <Navigation
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        isOpen={isNavOpen}
+        onToggle={() => setIsNavOpen((v) => !v)}
+      />
       
       {/* Content */}
-      <div className="relative z-10 md:ml-80 flex flex-col min-h-screen">
+      <div className={`relative z-10 ${isNavOpen ? "md:ml-80" : "md:ml-0"} transition-all duration-500 flex flex-col min-h-screen`}>
+
         <main className="flex-grow section-padding">
           <div className="container-professional">
             <div className="glass-card p-8 lg:p-12 animate-fade-in">
