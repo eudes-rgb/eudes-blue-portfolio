@@ -24,6 +24,9 @@ const TABS = {
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState(TABS.ACCUEIL);
+  const [isNavOpen, setIsNavOpen] = useState(true);
+  
+
   
   // Optimize rendering by memoizing the content based on the active tab
   const renderContent = () => {
