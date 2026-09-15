@@ -23,11 +23,14 @@ const tabs: Tab[] = [
 interface NavigationProps {
   activeTab: string;
   onTabChange: (tabId: string) => void;
+  isOpen?: boolean;
+  onToggle?: () => void;
 }
 
-export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
+export const Navigation = ({ activeTab, onTabChange, isOpen = true, onToggle }: NavigationProps) => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 
   useEffect(() => {
     if (!isMobile) {
