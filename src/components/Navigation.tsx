@@ -167,8 +167,31 @@ export const Navigation = ({ activeTab, onTabChange, isOpen = true, onToggle }: 
   }
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-80 glass-morphism-pro p-6 shadow-2xl hidden md:block z-30">
-      {navContent}
-    </aside>
+    <>
+      {/* Bouton puce pour afficher/masquer le menu */}
+      <button
+        onClick={onToggle}
+        aria-label={isOpen ? "Masquer le menu" : "Afficher le menu"}
+        className={cn(
+          "hidden md:flex fixed top-6 z-50 w-11 h-11 rounded-full bg-primary text-primary-foreground",
+          "items-center justify-center shadow-glow border border-primary/30",
+          "hover:scale-110 transition-all duration-300",
+          isOpen ? "left-[19.5rem]" : "left-6"
+        )}
+      >
+        {isOpen ? <X size={18} /> : <Menu size={18} />}
+      </button>
+
+      <aside
+        className={cn(
+          "fixed left-0 top-0 h-full w-80 glass-morphism-pro p-6 shadow-2xl hidden md:block z-30",
+          "transition-transform duration-500",
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+        {navContent}
+      </aside>
+    </>
+
   );
 };
