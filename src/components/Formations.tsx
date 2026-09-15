@@ -17,8 +17,7 @@ export const Formations = () => {
       etablissement: "École Communautaire de Montélique D'Afrique Centrale",
       lieu: "Libreville, Gabon",
       details: "Spécialisation en systèmes de paiement électronique et sécurité informatique",
-      niveau: "Bac+2",
-      statut: "Validé"
+      niveau: "Bac+2"
     },
     {
       periode: "Session 2022 - 2023",
