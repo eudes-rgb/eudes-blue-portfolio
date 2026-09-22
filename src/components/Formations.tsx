@@ -1,4 +1,4 @@
-import { GraduationCap, Calendar, MapPin } from "lucide-react";
+import { GraduationCap, Calendar, MapPin, ExternalLink } from "lucide-react";
 
 export const Formations = () => {
   const formations = [
@@ -9,7 +9,8 @@ export const Formations = () => {
       lieu: "Cité Scientifique, Villeneuve-d'Ascq",
       details: "Formation de techniciens en installation, administration et maintenance de réseaux cuivre et fibre optique, sans négliger les liaisons sans fil",
       niveau: "Bac+2",
-      statut: "En cours"
+      statut: "En cours",
+      lien: "https://share.google/IjHlxHZcqvrgrUNbr"
     },
     {
       periode: "Octobre 2022 - Août 2024",
@@ -102,6 +103,18 @@ export const Formations = () => {
                     <div className="bg-muted/30 p-4 rounded-lg border border-border/30">
                       <p className="text-muted-foreground leading-relaxed">{formation.details}</p>
                     </div>
+                  )}
+
+                  {formation.lien && (
+                    <a
+                      href={formation.lien}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Voir la formation
+                    </a>
                   )}
                 </div>
               </div>

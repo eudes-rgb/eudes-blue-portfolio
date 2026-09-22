@@ -41,34 +41,6 @@ export const Experiences = () => {
       couleur: "secondary"
     },
     {
-      poste: "Agent d'entretien",
-      entreprise: "Self de la Gendarmerie de Châteaulin",
-      periode: "Janvier 2025 (3 week-ends)",
-      lieu: "Châteaulin, France",
-      type: "Emploi temporaire",
-      responsabilites: [
-        "Maintien de conditions d'hygiène impeccables dans un cadre institutionnel",
-        "Démonstration de ponctualité, rigueur et sens du service",
-        "Travail dans un environnement organisé et strict",
-      ],
-      competences: ["Rigueur", "Sens du service", "Respect des protocoles"],
-      couleur: "accent"
-    },
-    {
-      poste: "Opérateur-Fermeture de Bouchons",
-      entreprise: "Sobraga Gabon",
-      periode: "Mars 2021 - Avril 2022",
-      lieu: "Gabon",
-      type: "Emploi industriel",
-      responsabilites: [
-        "Travail en équipe sur la chaîne de production",
-        "Contrôle qualité des bouchons",
-        "Maintenance préventive des équipements",
-      ],
-      competences: ["Travail en équipe", "Contrôle qualité", "Production industrielle"],
-      couleur: "primary"
-    },
-    {
       poste: "Chef de projets",
       entreprise: "Association des élèves du lycée",
       periode: "Février 2021 - Avril 2021",
@@ -221,7 +193,7 @@ export const Experiences = () => {
       {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
         <div className="text-center glass-card p-6 hover-lift">
-          <div className="text-3xl font-bold text-primary mb-2">5</div>
+          <div className="text-3xl font-bold text-primary mb-2">3</div>
           <p className="text-muted-foreground">Expériences diverses</p>
         </div>
         <div className="text-center glass-card p-6 hover-lift">
