@@ -9,7 +9,8 @@ export const Formations = () => {
       lieu: "Cité Scientifique, Villeneuve-d'Ascq",
       details: "Formation de techniciens en installation, administration et maintenance de réseaux cuivre et fibre optique, sans négliger les liaisons sans fil",
       niveau: "Bac+2",
-      statut: "En cours"
+      statut: "En cours",
+      lien: "https://share.google/IjHlxHZcqvrgrUNbr"
     },
     {
       periode: "Octobre 2022 - Août 2024",
