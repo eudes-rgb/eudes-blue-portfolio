@@ -156,7 +156,7 @@ export const Navigation = ({ activeTab, onTabChange, isOpen = true, onToggle }: 
         <aside
           id="mobile-menu"
           className={cn(
-            "fixed left-0 top-0 h-full w-80 glass-morphism-pro p-6 shadow-2xl transition-transform duration-500 z-40",
+            "fixed left-0 top-0 h-full w-[85vw] max-w-xs glass-morphism-pro p-4 pt-20 shadow-2xl transition-transform duration-500 z-40 overflow-hidden",
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           )}
         >
@@ -184,7 +184,7 @@ export const Navigation = ({ activeTab, onTabChange, isOpen = true, onToggle }: 
 
       <aside
         className={cn(
-          "fixed left-0 top-0 h-full w-80 glass-morphism-pro p-6 shadow-2xl hidden md:block z-30",
+          "fixed left-0 top-0 h-full w-80 glass-morphism-pro p-5 shadow-2xl hidden md:block z-30 overflow-hidden",
           "transition-transform duration-500",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
