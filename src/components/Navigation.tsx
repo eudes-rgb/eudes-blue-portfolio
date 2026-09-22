@@ -61,10 +61,10 @@ export const Navigation = ({ activeTab, onTabChange, isOpen = true, onToggle }: 
   };
 
   const navContent = (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full min-h-0">
       {/* Profile Section */}
-      <div className="text-center mb-10 p-6 bg-gradient-card rounded-2xl border border-border/30">
-        <div className="relative w-24 h-24 mx-auto mb-4">
+      <div className="text-center mb-4 p-4 bg-gradient-card rounded-2xl border border-border/30 flex-shrink-0">
+        <div className="relative w-20 h-20 mx-auto mb-3">
           <img
             src="/lovable-uploads/dbdae958-60f2-4a66-aad1-b6df1a503956.png"
             alt="Eudes Hermann"
@@ -79,7 +79,7 @@ export const Navigation = ({ activeTab, onTabChange, isOpen = true, onToggle }: 
       </div>
       
       {/* Navigation Menu */}
-      <nav className="flex-1 space-y-2 px-2">
+      <nav className="flex-1 min-h-0 overflow-y-auto space-y-1.5 px-2 -mx-1 pr-1">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           return (
@@ -92,14 +92,14 @@ export const Navigation = ({ activeTab, onTabChange, isOpen = true, onToggle }: 
                 }
               }}
               className={cn(
-                "w-full px-4 py-3 rounded-xl flex items-center gap-3 text-left transition-all duration-300 group",
+                "w-full px-3 py-2.5 rounded-xl flex items-center gap-3 text-left transition-all duration-300 group",
                 activeTab === tab.id
-                  ? "bg-primary text-primary-foreground shadow-glow scale-105"
+                  ? "bg-primary text-primary-foreground shadow-glow"
                   : "text-muted-foreground hover:bg-card/80 hover:text-foreground hover:scale-102 hover:shadow-card"
               )}
             >
               <div className={cn(
-                "flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300",
+                "flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300",
                 activeTab === tab.id
                   ? "bg-primary-foreground/20"
                   : "bg-muted/30 group-hover:bg-primary/10"
@@ -113,7 +113,7 @@ export const Navigation = ({ activeTab, onTabChange, isOpen = true, onToggle }: 
       </nav>
       
       {/* Contact Info */}
-      <div className="mt-auto p-4 bg-card/40 rounded-xl border border-border/30 space-y-3">
+      <div className="mt-3 flex-shrink-0 p-3 bg-card/40 rounded-xl border border-border/30 space-y-2">
         <div className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">
           Contact rapide
         </div>
