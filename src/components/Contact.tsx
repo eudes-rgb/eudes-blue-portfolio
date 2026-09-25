@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Mail, Phone, Send, Linkedin, Instagram, MapPin } from "lucide-react";
+import cvAsset from "@/assets/CV_EUDES_HERMANN3.pdf.asset.json";
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -147,7 +148,7 @@ export const Contact = () => {
             <Button 
               variant="outline" 
               className="w-full border-[#0EA5E9]/20 hover:bg-[#0EA5E9]/10"
-              onClick={() => window.open('/CV_STAGE_EUDES-HERMANN-2.pdf', '_blank')}
+              onClick={() => window.open(cvAsset.url, '_blank', 'noopener,noreferrer')}
             >
               Télécharger mon CV
             </Button>
