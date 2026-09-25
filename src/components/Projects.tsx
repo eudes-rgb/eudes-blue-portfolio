@@ -1,8 +1,21 @@
-import { Terminal, FileText, Github, Linkedin, Instagram, Facebook } from "lucide-react";
+import { Terminal, FileText, Github, Linkedin, Instagram, Facebook, ShieldCheck } from "lucide-react";
 import { Button } from "./ui/button";
+import vpnPdf from "@/assets/portfolio-serveur-vpn-debian13.pdf.asset.json";
 
 export const Projects = () => {
   const projects = [
+    {
+      title: "Serveur VPN sur Debian 13",
+      description: "Mise en place d'un VPN sécurisé avec authentification centralisée LDAP, dans le cadre de ma première année de DEUST Infrastructures Numériques (Université de Lille)",
+      details: [
+        "Serveur VPN OpenVPN avec support IPv4 / IPv6",
+        "Authentification centralisée LDAP / Active Directory",
+        "Chiffrement fort AES-256-GCM et PKI SSL/TLS",
+        "Haute disponibilité avec double IP publique et failover"
+      ],
+      pdfUrl: vpnPdf.url,
+      icon: ShieldCheck
+    },
     {
       title: "Configuration des VLANs",
       description: "Documentation technique sur la création et la configuration des VLANs pour segmenter un réseau",
