@@ -2,7 +2,7 @@
 import { Briefcase, Calendar, MapPin, CheckCircle, Users, Target, Award } from "lucide-react";
 
 export const Experiences = () => {
-  const experiences = [
+  const experiences: { poste: string; entreprise: string; periode: string; lieu: string; type: string; responsabilites: string[]; accomplissements?: string[]; competences: string[]; couleur: string }[] = [
     {
       poste: "Projet académique – Réseaux et sécurité",
       entreprise: "Université de Lille",
