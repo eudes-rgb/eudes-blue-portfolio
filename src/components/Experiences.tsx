@@ -170,7 +170,7 @@ export const Experiences = () => {
       {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
         <div className="text-center glass-card p-6 hover-lift">
-          <div className="text-3xl font-bold text-primary mb-2">3</div>
+          <div className="text-3xl font-bold text-primary mb-2">2</div>
           <p className="text-muted-foreground">Expériences diverses</p>
         </div>
         <div className="text-center glass-card p-6 hover-lift">
