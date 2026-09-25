@@ -2,26 +2,7 @@
 import { Briefcase, Calendar, MapPin, CheckCircle, Users, Target, Award } from "lucide-react";
 
 export const Experiences = () => {
-  const experiences = [
-    {
-      poste: "Stagiaire Administrateur Réseaux",
-      entreprise: "Juventin Notre-Dame",
-      periode: "Mai 2025 - Juillet 2025",
-      lieu: "Villeneuve d'Ascq, France",
-      type: "Stage professionnel",
-      responsabilites: [
-        "Diagnostic complet et optimisation du réseau filaire et Wi-Fi",
-        "Refonte du schéma réseau avec ajout de VLAN et nouvelles prises RJ45",
-        "Mise en place de codes d'accès clients et segmentation sécurisée",
-        "Simulation de déploiement via Cisco Packet Tracer",
-      ],
-      accomplissements: [
-        "Amélioration de la performance réseau, réduisant les interruptions de service de 70 %",
-        "Mise en place d'un plan d'adressage IP optimisé pour 50+ postes",
-      ],
-      competences: ["Administration réseau", "Cisco Packet Tracer", "VLAN", "Adressage IP"],
-      couleur: "primary"
-    },
+  const experiences: { poste: string; entreprise: string; periode: string; lieu: string; type: string; responsabilites: string[]; accomplissements?: string[]; competences: string[]; couleur: string }[] = [
     {
       poste: "Projet académique – Réseaux et sécurité",
       entreprise: "Université de Lille",
@@ -189,7 +170,7 @@ export const Experiences = () => {
       {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
         <div className="text-center glass-card p-6 hover-lift">
-          <div className="text-3xl font-bold text-primary mb-2">3</div>
+          <div className="text-3xl font-bold text-primary mb-2">2</div>
           <p className="text-muted-foreground">Expériences diverses</p>
         </div>
         <div className="text-center glass-card p-6 hover-lift">
