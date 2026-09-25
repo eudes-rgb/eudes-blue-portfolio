@@ -17,20 +17,6 @@ export const Experiences = () => {
       competences: ["Sécurité des systèmes", "Réseaux", "Linux", "Monétique"],
       couleur: "secondary"
     },
-    {
-      poste: "Chef de projets",
-      entreprise: "Association des élèves du lycée",
-      periode: "Février 2021 - Avril 2021",
-      lieu: "Gabon",
-      type: "Responsabilité associative",
-      responsabilites: [
-        "Planification et coordination des activités",
-        "Gestion des initiatives étudiantes",
-        "Organisation d'événements",
-      ],
-      competences: ["Leadership", "Gestion de projet", "Organisation"],
-      couleur: "secondary"
-    },
   ];
 
   const getIconColor = (couleur: string) => {
