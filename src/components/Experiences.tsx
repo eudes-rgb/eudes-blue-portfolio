@@ -4,25 +4,6 @@ import { Briefcase, Calendar, MapPin, CheckCircle, Users, Target, Award } from "
 export const Experiences = () => {
   const experiences = [
     {
-      poste: "Stagiaire Administrateur Réseaux",
-      entreprise: "Juventin Notre-Dame",
-      periode: "Mai 2025 - Juillet 2025",
-      lieu: "Villeneuve d'Ascq, France",
-      type: "Stage professionnel",
-      responsabilites: [
-        "Diagnostic complet et optimisation du réseau filaire et Wi-Fi",
-        "Refonte du schéma réseau avec ajout de VLAN et nouvelles prises RJ45",
-        "Mise en place de codes d'accès clients et segmentation sécurisée",
-        "Simulation de déploiement via Cisco Packet Tracer",
-      ],
-      accomplissements: [
-        "Amélioration de la performance réseau, réduisant les interruptions de service de 70 %",
-        "Mise en place d'un plan d'adressage IP optimisé pour 50+ postes",
-      ],
-      competences: ["Administration réseau", "Cisco Packet Tracer", "VLAN", "Adressage IP"],
-      couleur: "primary"
-    },
-    {
       poste: "Projet académique – Réseaux et sécurité",
       entreprise: "Université de Lille",
       periode: "2025 - 2026",
