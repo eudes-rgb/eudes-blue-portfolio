@@ -7,7 +7,7 @@ export const Experiences = () => {
       poste: "Stagiaire Administrateur Réseaux",
       entreprise: "Juventin Notre-Dame",
       periode: "Mai 2025 - Juillet 2025",
-      lieu: "Châteaulin, France",
+      lieu: "Villeneuve d'Ascq, France",
       type: "Stage professionnel",
       responsabilites: [
         "Diagnostic complet et optimisation du réseau filaire et Wi-Fi",
