@@ -7,7 +7,7 @@ export const Experiences = () => {
       poste: "Stagiaire Administrateur Réseaux",
       entreprise: "Juventin Notre-Dame",
       periode: "Mai 2025 - Juillet 2025",
-      lieu: "Châteaulin, France",
+      lieu: "Villeneuve d'Ascq, France",
       type: "Stage professionnel",
       responsabilites: [
         "Diagnostic complet et optimisation du réseau filaire et Wi-Fi",
@@ -23,21 +23,17 @@ export const Experiences = () => {
       couleur: "primary"
     },
     {
-      poste: "Projet BTS – Infrastructure réseau complète",
-      entreprise: "Lycée Saint-Louis",
-      periode: "Février 2024 - Avril 2024",
-      lieu: "Châteaulin, France",
+      poste: "Projet académique – Réseaux et sécurité",
+      entreprise: "Université de Lille",
+      periode: "2025 - 2026",
+      lieu: "Villeneuve d'Ascq, France",
       type: "Projet académique",
       responsabilites: [
-        "Conception et déploiement d'un réseau segmenté en 4 VLAN avec routage dynamique",
-        "Configuration d'un contrôleur de domaine Windows Server 2019 (ADS, DNS, DHCP)",
-        "Mise en place d'une stratégie de sauvegarde et partage réseau",
+        "Conception et configuration d'infrastructures réseau dans le cadre de la Licence 2 Monétique et Sécurité des Systèmes",
+        "Mise en pratique de la segmentation réseau et des protocoles de sécurité",
+        "Travaux pratiques sur des environnements Linux et Windows Server",
       ],
-      accomplissements: [
-        "Déploiement opérationnel d'un réseau simulé pour plus de 100 postes",
-        "Implémentation d'un système de sauvegarde automatisé sécurisé",
-      ],
-      competences: ["Windows Server", "Active Directory", "DNS", "DHCP", "VLAN"],
+      competences: ["Sécurité des systèmes", "Réseaux", "Linux", "Monétique"],
       couleur: "secondary"
     },
     {
