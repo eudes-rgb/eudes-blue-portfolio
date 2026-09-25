@@ -17,20 +17,6 @@ export const Experiences = () => {
       competences: ["Sécurité des systèmes", "Réseaux", "Linux", "Monétique"],
       couleur: "secondary"
     },
-    {
-      poste: "Chef de projets",
-      entreprise: "Association des élèves du lycée",
-      periode: "Février 2021 - Avril 2021",
-      lieu: "Gabon",
-      type: "Responsabilité associative",
-      responsabilites: [
-        "Planification et coordination des activités",
-        "Gestion des initiatives étudiantes",
-        "Organisation d'événements",
-      ],
-      competences: ["Leadership", "Gestion de projet", "Organisation"],
-      couleur: "secondary"
-    },
   ];
 
   const getIconColor = (couleur: string) => {
@@ -170,8 +156,8 @@ export const Experiences = () => {
       {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
         <div className="text-center glass-card p-6 hover-lift">
-          <div className="text-3xl font-bold text-primary mb-2">2</div>
-          <p className="text-muted-foreground">Expériences diverses</p>
+          <div className="text-3xl font-bold text-primary mb-2">1</div>
+          <p className="text-muted-foreground">Expérience académique</p>
         </div>
         <div className="text-center glass-card p-6 hover-lift">
           <div className="text-3xl font-bold text-primary mb-2">3+</div>
