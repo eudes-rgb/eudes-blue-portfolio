@@ -1,9 +1,8 @@
 
-import { cn } from "@/lib/utils";
-import { 
-  Code, Monitor, Database, Shield, Laptop, Languages, 
-  FileCode, Cpu, GalleryVerticalEnd, BookOpen, Settings, GitBranch,
-  Network, Lock, Smartphone, Workflow, Server, Layers, Terminal, Wifi
+import {
+  Code, Monitor, Database, Shield, Laptop, Languages,
+  FileCode, Cpu, GalleryVerticalEnd, BookOpen, Settings,
+  Network, Lock, Server, Terminal, Wifi
 } from "lucide-react";
 
 const skills = [
@@ -89,16 +88,17 @@ const skills = [
 export const Skills = () => {
   return (
     <div className="animate-fade-in">
-      <h2 className="text-3xl font-bold mb-12 text-center text-[#0EA5E9] dark:text-blue-400">Compétences</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {skills.map((category) => (
           <div
             key={category.category}
-            className="bg-[#1A1F2C] dark:bg-slate-900 p-6 rounded-lg border border-[#0EA5E9]/20 dark:border-blue-500/20 hover:border-[#0EA5E9] dark:hover:border-blue-400 transition-colors duration-300 shadow-lg"
+            className="card-professional p-6 hover-lift"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="text-[#0EA5E9] dark:text-blue-400">{category.icon}</div>
-              <h3 className="text-xl font-semibold text-white">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                {category.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-foreground leading-tight">
                 {category.category}
               </h3>
             </div>
@@ -106,10 +106,10 @@ export const Skills = () => {
               {category.items.map((skill) => (
                 <li
                   key={skill.name}
-                  className="flex items-center gap-3 text-gray-300 hover:text-[#0EA5E9] dark:hover:text-blue-400 transition-colors"
+                  className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <div className="text-[#0EA5E9] dark:text-blue-400">{skill.icon}</div>
-                  <span>{skill.name}</span>
+                  <div className="mt-0.5 text-secondary">{skill.icon}</div>
+                  <span className="text-sm leading-snug">{skill.name}</span>
                 </li>
               ))}
             </ul>

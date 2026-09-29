@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Home, User, Book, Mail, Terminal, Menu, X, GraduationCap, Briefcase, Rss } from "lucide-react";
+import { Home, User, Book, Mail, Terminal, Menu, X, GraduationCap, Briefcase, Rss, FileText, Phone } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import cvAsset from "@/assets/CV_EUDES_HERMANN3.pdf.asset.json";
 
@@ -225,5 +225,3 @@ export const Navigation = ({ isOpen = true, onToggle }: NavigationProps) => {
     </>
   );
 };
-
-import { FileText, Phone } from "lucide-react";
