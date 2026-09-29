@@ -32,13 +32,6 @@ export const Formations = () => {
 
   return (
     <div className="space-y-8 animate-fade-in">
-      <div className="text-center">
-        <h2 className="section-heading">Formations Académiques</h2>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Mon parcours éducatif et les compétences acquises au fil de mes études
-        </p>
-      </div>
-
       <div className="grid gap-8">
         {formations.map((formation, index) => (
           <div

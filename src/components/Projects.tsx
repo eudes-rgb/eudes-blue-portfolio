@@ -134,4 +134,3 @@ export const Projects = () => {
   );
 };
 
-import { Cable as _Cable } from "lucide-react";
