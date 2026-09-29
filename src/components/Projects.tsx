@@ -1,4 +1,5 @@
-import { Terminal, FileText, Github, Linkedin, Instagram, Facebook, ShieldCheck } from "lucide-react";
+
+import { Terminal, FileText, Linkedin, Instagram, Facebook, ShieldCheck, Network, Cable, Laptop } from "lucide-react";
 import { Button } from "./ui/button";
 import vpnPdf from "@/assets/portfolio-serveur-vpn-debian13.pdf.asset.json";
 
@@ -25,7 +26,8 @@ export const Projects = () => {
         "Segmentation du trafic réseau",
         "Documentation des bonnes pratiques"
       ],
-      pdfUrl: "https://www.canva.com/design/DAG66ngB390/A-HepelHEd6s6nr9MlOEVA/view"
+      pdfUrl: "https://www.canva.com/design/DAG66ngB390/A-HepelHEd6s6nr9MlOEVA/view",
+      icon: Network
     },
     {
       title: "Câblage de l'infrastructure",
@@ -36,7 +38,8 @@ export const Projects = () => {
         "Installation et raccordement des câbles",
         "Documentation des procédures de câblage"
       ],
-      pdfUrl: "https://www.canva.com/design/DAG663SktvI/XLa3K6nShwNxSVsV70PZoQ/view"
+      pdfUrl: "https://www.canva.com/design/DAG663SktvI/XLa3K6nShwNxSVsV70PZoQ/view",
+      icon: Cable
     },
     {
       title: "Installation d'Ubuntu",
@@ -47,7 +50,8 @@ export const Projects = () => {
         "Installation des paquets essentiels",
         "Personnalisation de l'interface utilisateur"
       ],
-      pdfUrl: "https://gamma.app/docs/Installation-dUbuntu-sur-VirtualBox-q3zhivgfaggua7d"
+      pdfUrl: "https://gamma.app/docs/Installation-dUbuntu-sur-VirtualBox-q3zhivgfaggua7d",
+      icon: Laptop
     }
   ];
 
@@ -65,46 +69,49 @@ export const Projects = () => {
     {
       name: "Facebook",
       icon: Facebook,
-      url: "https://www.facebook.com/your-profile" // Keep this as is since no Facebook URL was provided
+      url: "https://www.facebook.com/your-profile"
     }
   ];
 
   return (
     <div className="animate-fade-in space-y-8">
-      <h2 className="text-3xl font-bold mb-8 text-[#0EA5E9]">Mes Projets</h2>
-      
-      <div className="grid gap-6">
+      <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project, index) => (
-          <div key={index} className="bg-[#1A1F2C] p-6 rounded-lg border border-[#0EA5E9]/20 hover:border-[#0EA5E9] transition-colors">
-            <div className="flex items-start gap-4">
-              <Terminal className="w-6 h-6 text-[#0EA5E9]" />
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                  {project.icon && <project.icon className="w-5 h-5 text-[#0EA5E9]" />}
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <div className="space-y-2 text-sm text-gray-400 mb-4">
-                  {project.details.map((detail, idx) => (
-                    <p key={idx}>• {detail}</p>
-                  ))}
-                </div>
-                <Button 
-                  variant="outline" 
-                  className="flex items-center gap-2 border-[#0EA5E9]/20 hover:bg-[#0EA5E9]/10"
-                  onClick={() => window.open(project.pdfUrl, '_blank')}
-                >
-                  <FileText className="w-4 h-4" />
-                  Voir le PDF
-                </Button>
+          <div
+            key={index}
+            className="card-professional p-6 hover-lift flex flex-col"
+          >
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                <project.icon className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-1 text-foreground">{project.title}</h3>
               </div>
             </div>
+            <p className="text-muted-foreground mb-4">{project.description}</p>
+            <div className="space-y-2 text-sm text-muted-foreground mb-6">
+              {project.details.map((detail, idx) => (
+                <p key={idx} className="flex items-start gap-2">
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
+                  {detail}
+                </p>
+              ))}
+            </div>
+            <Button
+              variant="outline"
+              className="mt-auto flex items-center gap-2 border-primary/40 text-primary hover:bg-primary/10"
+              onClick={() => window.open(project.pdfUrl, '_blank')}
+            >
+              <FileText className="w-4 h-4" />
+              Voir la documentation
+            </Button>
           </div>
         ))}
       </div>
 
       <div className="mt-12">
-        <h3 className="text-xl font-semibold mb-4">Retrouvez-moi sur les réseaux</h3>
+        <h3 className="text-xl font-semibold mb-4 text-foreground">Retrouvez-moi sur les réseaux</h3>
         <div className="flex gap-4">
           {socialLinks.map((link, index) => {
             const Icon = link.icon;
@@ -114,9 +121,10 @@ export const Projects = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-[#1A1F2C] rounded-lg border border-[#0EA5E9]/20 hover:border-[#0EA5E9] transition-colors"
+                aria-label={link.name}
+                className="p-3 bg-card rounded-xl border border-border/60 hover:border-primary/40 hover:bg-primary/5 transition-colors duration-300"
               >
-                <Icon className="w-6 h-6 text-[#0EA5E9]" />
+                <Icon className="w-6 h-6 text-primary" />
               </a>
             );
           })}
@@ -125,3 +133,4 @@ export const Projects = () => {
     </div>
   );
 };
+

@@ -6,79 +6,122 @@ import { About } from "@/components/About";
 import { Projects } from "@/components/Projects";
 import { Formations } from "@/components/Formations";
 import { Experiences } from "@/components/Experiences";
+import { Veille } from "@/components/Veille";
 import { Navigation } from "@/components/Navigation";
+import { SectionHeader } from "@/components/SectionHeader";
 import { useState } from "react";
-import { BackgroundCarousel } from "@/components/BackgroundCarousel";
 import { Copyright } from "lucide-react";
 
-// Use a constant for the tab values for better maintainability
-const TABS = {
-  ACCUEIL: "accueil",
-  ABOUT: "about",
-  COMPETENCES: "competences",
-  FORMATIONS: "formations",
-  EXPERIENCES: "experiences",
-  PROJETS: "projets",
-  CONTACT: "contact"
-};
-
 const Index = () => {
-  const [activeTab, setActiveTab] = useState(TABS.ACCUEIL);
   const [isNavOpen, setIsNavOpen] = useState(true);
-  
-
-  
-  // Optimize rendering by memoizing the content based on the active tab
-  const renderContent = () => {
-    switch (activeTab) {
-      case TABS.ACCUEIL:
-        return <Header />;
-      case TABS.ABOUT:
-        return <About />;
-      case TABS.COMPETENCES:
-        return <Skills />;
-      case TABS.FORMATIONS:
-        return <Formations />;
-      case TABS.EXPERIENCES:
-        return <Experiences />;
-      case TABS.PROJETS:
-        return <Projects />;
-      case TABS.CONTACT:
-        return <Contact />;
-      default:
-        return <Header />;
-    }
-  };
 
   return (
-    <div className="min-h-screen relative bg-gradient-hero">
-      {/* Background Carousel */}
-      <BackgroundCarousel />
-      
-      {/* Navigation */}
-      <Navigation
-        activeTab={activeTab}
-        onTabChange={setActiveTab}
-        isOpen={isNavOpen}
-        onToggle={() => setIsNavOpen((v) => !v)}
-      />
-      
-      {/* Content */}
-      <div className={`relative z-10 ${isNavOpen ? "md:ml-80" : "md:ml-0"} transition-all duration-500 flex flex-col min-h-screen`}>
+    <div className="min-h-screen relative bg-background">
+      {/* Décor : halos bleu et rouge sur fond blanc */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-40 -right-40 w-[36rem] h-[36rem] rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute top-1/2 -left-48 w-[32rem] h-[32rem] rounded-full bg-secondary/8 blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-[28rem] h-[28rem] rounded-full bg-primary/5 blur-3xl" />
+      </div>
 
-        <main className="flex-grow section-padding">
-          <div className="container-professional">
-            <div className="glass-card p-8 lg:p-12 animate-fade-in">
-              {renderContent()}
-            </div>
+      {/* Navigation */}
+      <Navigation isOpen={isNavOpen} onToggle={() => setIsNavOpen((v) => !v)} />
+
+      {/* Contenu : page unique qui défile */}
+      <div className={`relative z-10 ${isNavOpen ? "md:ml-80" : "md:ml-0"} transition-all duration-500 flex flex-col min-h-screen`}>
+        {/* Accueil / Hero */}
+        <section id="accueil" className="min-h-screen flex items-center">
+          <div className="w-full">
+            <Header />
           </div>
+        </section>
+
+        <main>
+          <section id="about" className="py-16 md:py-24">
+            <div className="container-professional">
+              <SectionHeader
+                eyebrow="Qui suis-je"
+                title="À propos"
+                subtitle="Mon profil en quelques mots"
+              />
+              <About />
+            </div>
+          </section>
+
+          <section id="competences" className="py-16 md:py-24 bg-muted/30 border-y border-border/40">
+            <div className="container-professional">
+              <SectionHeader
+                eyebrow="Expertise technique"
+                title="Compétences"
+                subtitle="Maîtrise des systèmes, réseaux et de la sécurité informatique"
+              />
+              <Skills />
+            </div>
+          </section>
+
+          <section id="projets" className="py-16 md:py-24">
+            <div className="container-professional">
+              <SectionHeader
+                eyebrow="Réalisations"
+                title="Projets"
+                subtitle="Projets techniques et documentations"
+              />
+              <Projects />
+            </div>
+          </section>
+
+          <section id="experiences" className="py-16 md:py-24 bg-muted/30 border-y border-border/40">
+            <div className="container-professional">
+              <SectionHeader
+                eyebrow="Parcours professionnel"
+                title="Expériences"
+                subtitle="Projets réalisés et missions accomplies"
+              />
+              <Experiences />
+            </div>
+          </section>
+
+          <section id="formations" className="py-16 md:py-24">
+            <div className="container-professional">
+              <SectionHeader
+                eyebrow="Parcours académique"
+                title="Formation"
+                subtitle="Diplômes et parcours universitaire"
+              />
+              <Formations />
+            </div>
+          </section>
+
+          <section id="veille" className="py-16 md:py-24 bg-muted/30 border-y border-border/40">
+            <div className="container-professional">
+              <SectionHeader
+                eyebrow="Veille technologique"
+                title="Veille Technologique"
+                subtitle="Une veille régulière sur la cybersécurité et les réseaux"
+              />
+              <Veille />
+            </div>
+          </section>
+
+          <section id="contact" className="py-16 md:py-24">
+            <div className="container-professional">
+              <SectionHeader
+                eyebrow="Contact"
+                title="Contact"
+                subtitle="Disponible pour discuter de vos projets et opportunités"
+              />
+              <Contact />
+            </div>
+          </section>
         </main>
-        
+
         {/* Footer */}
-        <footer className="relative z-10 py-6 text-center text-muted-foreground border-t border-border/20 backdrop-blur-sm">
-          <div className="flex items-center justify-center gap-2 text-sm">
-            <Copyright className="w-4 h-4" />
-            <span>2025 Eudes-Hermann EKOUANDJA. Tous droits réservés.</span>
+        <footer className="relative z-10 py-6 text-center text-muted-foreground border-t border-border/40 bg-card/60 backdrop-blur-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm">
+            <div className="flex items-center gap-2">
+              <Copyright className="w-4 h-4" />
+              <span>2026 Eudes-Hermann EKOUANDJA. Tous droits réservés.</span>
+            </div>
           </div>
         </footer>
       </div>
