@@ -1,7 +1,7 @@
 
 import {
   Code, Monitor, Database, Shield, Laptop, Languages,
-  FileCode, Cpu, GalleryVerticalEnd, BookOpen, Settings,
+  FileCode, Cpu, GalleryVerticalEnd, BookOpen, Settings, Layers,
   Network, Lock, Server, Terminal, Wifi
 } from "lucide-react";
 
