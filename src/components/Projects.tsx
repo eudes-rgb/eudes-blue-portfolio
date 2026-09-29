@@ -79,7 +79,10 @@ export const Projects = () => {
             <div className="flex items-start gap-4">
               <Terminal className="w-6 h-6 text-[#0EA5E9]" />
               <div className="flex-1">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                  {project.icon && <project.icon className="w-5 h-5 text-[#0EA5E9]" />}
+                  {project.title}
+                </h3>
                 <p className="text-gray-300 mb-4">{project.description}</p>
                 <div className="space-y-2 text-sm text-gray-400 mb-4">
                   {project.details.map((detail, idx) => (
