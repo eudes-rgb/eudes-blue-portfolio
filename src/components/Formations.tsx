@@ -116,35 +116,6 @@ export const Formations = () => {
         ))}
       </div>
 
-      {/* Timeline Visual */}
-      <div className="relative mt-16">
-        <div className="text-center mb-8">
-          <h3 className="text-xl font-semibold text-foreground mb-2">Timeline de Formation</h3>
-          <p className="text-muted-foreground">Évolution de mon parcours académique</p>
-        </div>
-        
-        <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary to-primary/20"></div>
-          
-          <div className="space-y-16">
-            {formations.map((formation, index) => (
-              <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                <div className="flex-1 px-8">
-                  <div className={`glass-card p-6 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                    <h4 className="font-bold text-foreground">{formation.diplome}</h4>
-                    <p className="text-muted-foreground text-sm">{formation.periode}</p>
-                    <p className="text-muted-foreground">{formation.etablissement}</p>
-                  </div>
-                </div>
-                
-                <div className="w-4 h-4 rounded-full bg-primary border-4 border-background shadow-glow z-10"></div>
-                
-                <div className="flex-1"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

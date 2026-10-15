@@ -39,12 +39,6 @@ export const Experiences = () => {
 
   return (
     <div className="space-y-12 animate-fade-in">
-      <div className="text-center">
-        <h2 className="section-heading">Expériences Professionnelles</h2>
-        <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-          Mon parcours professionnel et les compétences développées à travers diverses expériences
-        </p>
-      </div>
 
       <div className="space-y-8">
         {experiences.map((experience, index) => (
