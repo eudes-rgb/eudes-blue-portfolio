@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Calendar, FileText, ArrowDown, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, FileText, ArrowDown, MessageCircle } from "lucide-react";
 import cvAsset from "@/assets/CV_EUDES_HERMANN3.pdf.asset.json";
 
 export const Header = () => {
@@ -15,7 +15,6 @@ export const Header = () => {
     { icon: Mail, text: "eudes-hermann.ekouandja.etu@univ-lille.fr", href: "mailto:eudes-hermann.ekouandja.etu@univ-lille.fr" },
     { icon: Phone, text: "06 41 03 98 00", href: "tel:+33641039800" },
     { icon: MapPin, text: "Villeneuve-d'Ascq (59650)" },
-    { icon: Calendar, text: "Né le 26 mai 2000" },
   ];
 
   return (
